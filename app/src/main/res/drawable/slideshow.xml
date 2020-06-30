@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animation-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:duration="4000"
+        android:drawable="@drawable/slideshow1"
+    />
+
+    <item
+        android:duration="4000"
+        android:drawable="@drawable/slideshow2"
+    />
+    <item
+        android:duration="4000"
+        android:drawable="@drawable/slideshow3"
+    />
+    <item
+        android:duration="4000"
+        android:drawable="@drawable/slideshow4"
+    />
+    <item
+        android:duration="4000"
+        android:drawable="@drawable/slideshow5"
+    />
+    <item
+        android:duration="4000"
+        android:drawable="@drawable/slideshow6"
+    />
+</animation-list>
