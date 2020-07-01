@@ -23,8 +23,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         //gives us the three dots for settings
-        Toolbar toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+       // Toolbar toolbar = findViewById(R.id.toolbar);
+      //  setSupportActionBar(toolbar);
 
         ImageView iv_background = findViewById(R.id.iv_background);
         AnimationDrawable animationDrawable = (AnimationDrawable)  iv_background.getDrawable();
