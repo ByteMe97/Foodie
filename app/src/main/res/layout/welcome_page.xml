@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<!--<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--    xmlns:app="http://schemas.android.com/apk/res-auto"-->
+<!--    xmlns:tools="http://schemas.android.com/tools"-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="match_parent"-->
+<!--    android:background="#00FDE406"-->
+<!--    tools:context=".WelcomePage">-->
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -8,12 +16,21 @@
     android:background="#00FDE406"
     tools:context=".WelcomePage">
 
-    <ImageView
-        android:layout_width="match_parent"
-        android:id="@+id/iv_background"
-        android:scaleType="centerCrop"
-        android:src="@drawable/slideshow"
-        android:layout_height="match_parent" />
+    <!--    xmlns:app="http://schemas.android.com/apk/res-auto"-->
+    <!--    xmlns:tools="http://schemas.android.com/tools"-->
+    <!--    android:layout_width="match_parent"-->
+    <!--    android:layout_height="match_parent"-->
+    <!--    android:background="#00FDE406"-->
+    <!--    tools:context=".WelcomePage">-->
+
+<!--    tools:context=".MainActivity">-->
+
+<!--    <ImageView-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:id="@+id/iv_background"-->
+<!--        android:scaleType="centerCrop"-->
+<!--        android:src="@drawable/slideshow"-->
+<!--        android:layout_height="match_parent" />-->
 
 
     <Button
@@ -86,6 +103,7 @@
         android:textSize="36sp"
         android:textStyle="bold"
         tools:layout_editor_absoluteX="94dp"
-        tools:layout_editor_absoluteY="30dp" />
+        tools:layout_editor_absoluteY="30dp"
+        tools:ignore="MissingConstraints" />
 
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
