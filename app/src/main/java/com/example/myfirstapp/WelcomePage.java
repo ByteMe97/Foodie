@@ -31,8 +31,25 @@ public class WelcomePage extends Fragment {
             @Override
             public void onClick(View view) {
                 NavHostFragment.findNavController(WelcomePage.this)
-                        .navigate(R.id.action_FirstFragment_to_SecondFragment);
+                        .navigate(R.id.action_WelcomePage_to_SettingsPage);
             }
         });
+        view.findViewById(R.id.button_meals).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                NavHostFragment.findNavController(WelcomePage.this)
+                        .navigate(R.id.action_WelcomePage_to_MealsPage);
+            }
+        });
+
+        view.findViewById(R.id.button_plans).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                NavHostFragment.findNavController(WelcomePage.this)
+                        .navigate(R.id.action_WelcomePage_to_PlansPage);
+            }
+        });
+
+
     }
 }

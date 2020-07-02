@@ -5,30 +5,20 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import androidx.annotation.NonNull;
-import androidx.fragment.app.Fragment;
-import androidx.navigation.fragment.NavHostFragment;
+import androidx.preference.PreferenceFragmentCompat;
 
-public class SettingsPage extends Fragment {
+public class SettingsPage extends PreferenceFragmentCompat {
+//    @Override
+//    public View onCreateView(
+//            LayoutInflater inflater, ViewGroup container,
+//            Bundle savedInstanceState
+//    ) {
+//        // Inflate the layout for this fragment
+//        return inflater.inflate(R.layout.settings_fragment, container, false);
+//    }
 
     @Override
-    public View onCreateView(
-            LayoutInflater inflater, ViewGroup container,
-            Bundle savedInstanceState
-    ) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.settings_page, container, false);
-    }
-
-    public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
-
-        view.findViewById(R.id.button_second).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                NavHostFragment.findNavController(SettingsPage.this)
-                        .navigate(R.id.action_SecondFragment_to_FirstFragment);
-            }
-        });
+    public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
+        setPreferencesFromResource(R.xml.root_preferences, rootKey);
     }
 }

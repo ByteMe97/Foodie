@@ -3,26 +3,56 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/FirstFragment">
+    app:startDestination="@id/WelcomePage">
 
     <fragment
-        android:id="@+id/FirstFragment"
+        android:id="@+id/WelcomePage"
         android:name="com.example.myfirstapp.WelcomePage"
-        android:label="@string/first_fragment_label"
+        android:label="@string/welcome_page_label"
         tools:layout="@layout/welcome_page">
 
         <action
-            android:id="@+id/action_FirstFragment_to_SecondFragment"
-            app:destination="@id/SecondFragment" />
+            android:id="@+id/action_WelcomePage_to_MealsPage"
+            app:destination="@id/MealsPage" />
+
+        <action
+            android:id="@+id/action_WelcomePage_to_PlansPage"
+            app:destination="@+id/PlansPage" />
+        <action
+            android:id="@+id/action_WelcomePage_to_SettingsPage"
+            app:destination="@+id/SettingsPage" />
+
     </fragment>
+
     <fragment
-        android:id="@+id/SecondFragment"
+        android:id="@+id/SettingsPage"
         android:name="com.example.myfirstapp.SettingsPage"
-        android:label="@string/second_fragment_label"
-        tools:layout="@layout/settings_page">
+        android:label="@string/settings_page_label">
+
+        <!--        <action-->
+        <!--            android:id="@+id/action_SecondFragment_to_FirstFragment"-->
+        <!--            app:destination="@id/WelcomePage" />-->
+    </fragment>
+
+    <fragment
+        android:id="@+id/PlansPage"
+        android:name="com.example.myfirstapp.PlansPage"
+        android:label="@string/plans_page_label"
+        tools:layout="@layout/plans_page">
+
+<!--        <action-->
+<!--            android:id="@+id/action_SecondFragment_to_FirstFragment"-->
+<!--            app:destination="@id/WelcomePage" />-->
+    </fragment>
+
+    <fragment
+        android:id="@+id/MealsPage"
+        android:name="com.example.myfirstapp.MealsPage"
+        android:label="@string/meals_page_label"
+        tools:layout="@layout/meals_page">
 
         <action
             android:id="@+id/action_SecondFragment_to_FirstFragment"
-            app:destination="@id/FirstFragment" />
+            app:destination="@id/WelcomePage" />
     </fragment>
 </navigation>
