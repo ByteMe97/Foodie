@@ -54,8 +54,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0."
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textview_first"
         app:layout_constraintVertical_bias="1" />
+    <!--        app:layout_constraintTop_toBottomOf="@id/textview_first"-->
 
     <Button
         android:id="@+id/button_plans"
@@ -73,8 +73,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.25"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textview_first"
         app:layout_constraintVertical_bias="1.0" />
+    <!--        app:layout_constraintTop_toBottomOf="@id/textview_first"-->
 
     <Button
         android:id="@+id/button_meals"
@@ -88,7 +88,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textview_first"
-        app:layout_constraintVertical_bias="1" />
 
+        app:layout_constraintVertical_bias="1.0" />
+    <!--        app:layout_constraintTop_toBottomOf="@id/textview_first"-->
 </androidx.constraintlayout.widget.ConstraintLayout>
