@@ -18,21 +18,14 @@
         <action
             android:id="@+id/action_WelcomePage_to_PlansPage"
             app:destination="@+id/PlansPage" />
+
         <action
             android:id="@+id/action_WelcomePage_to_SettingsPage"
             app:destination="@+id/SettingsPage" />
 
     </fragment>
 
-    <fragment
-        android:id="@+id/SettingsPage"
-        android:name="com.example.myfirstapp.SettingsPage"
-        android:label="@string/settings_page_label">
 
-        <!--        <action-->
-        <!--            android:id="@+id/action_SecondFragment_to_FirstFragment"-->
-        <!--            app:destination="@id/WelcomePage" />-->
-    </fragment>
 
     <fragment
         android:id="@+id/PlansPage"
@@ -40,9 +33,6 @@
         android:label="@string/plans_page_label"
         tools:layout="@layout/plans_page">
 
-<!--        <action-->
-<!--            android:id="@+id/action_SecondFragment_to_FirstFragment"-->
-<!--            app:destination="@id/WelcomePage" />-->
     </fragment>
 
     <fragment
@@ -54,5 +44,36 @@
         <action
             android:id="@+id/action_SecondFragment_to_FirstFragment"
             app:destination="@id/WelcomePage" />
+
     </fragment>
+
+    <fragment
+        android:id="@+id/SettingsPage"
+        android:name="com.example.myfirstapp.SettingsPage"
+        android:label="@string/settings_page_label"
+        tools:layout="@layout/settings">
+
+        <action
+            android:id="@+id/action_SettingsPage_to_PersonalSettingsPage"
+            app:destination="@id/PersonalSettingsPage" />
+        <action
+            android:id="@+id/action_SettingsPage_to_PasswordSettingsPage"
+            app:destination="@id/PasswordSettingsPage" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/PersonalSettingsPage"
+        android:name="com.example.myfirstapp.PersonalSettings"
+        android:label="@string/personal_settings_page_label">
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/PasswordSettingsPage"
+        android:name="com.example.myfirstapp.PasswordSettings"
+        android:label="@string/password_settings_page_label">
+
+    </fragment>
+
 </navigation>
