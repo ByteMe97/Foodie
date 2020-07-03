@@ -22,23 +22,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //gives us the three dots for settings
-       // Toolbar toolbar = findViewById(R.id.toolbar);
-      //  setSupportActionBar(toolbar);
-
         ImageView iv_background = findViewById(R.id.iv_background);
         AnimationDrawable animationDrawable = (AnimationDrawable)  iv_background.getDrawable();
         animationDrawable.start();
-
-        //gives us the function for mail at the bottom. In future this may be useful for notifications
-/*        FloatingActionButton fab = findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });*/
     }
 
     @Override

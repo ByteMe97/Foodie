@@ -7,7 +7,11 @@
     <string name="settings_page_label">Settings Page</string>
     <string name="plans_page_label">Plans Page</string>
     <string name="meals_page_label">Meals Page</string>
-<!--    <string name="next">Next</string>-->
+    <string name="personal_settings_page_label">Personal Settings Page</string>
+    <string name="password_settings_page_label">Password Settings Page</string>
+
+
+    <!--    <string name="next">Next</string>-->
     <string name="settings">Settings</string>
     <string name="plans">Plans</string>
     <string name="meals">Meals</string>
@@ -18,9 +22,16 @@
     <!-- Preference Titles -->
     <string name="messages_header">Messages</string>
     <string name="sync_header">Sync</string>
+    <string name="terms_and_conditions">Terms and Conditions</string>
 
-    <!-- Messages Preferences -->
-    <string name="signature_title">Your signature</string>
+    <!-- Personal Preferences -->
+    <string name="signature_title">First and Last Name</string>
+    <string name="email_address">Email</string>
+    <string name="current_password">Current Password</string>
+    <string name="new_password">New Password</string>
+    <string name="confirm_password">Confirm New Password</string>
+    <string name="new_email">New Email</string>
+    <string name="feedback">We would love to hear your feedback</string>
     <string name="reply_title">Default reply action</string>
 
     <!-- Sync Preferences -->
