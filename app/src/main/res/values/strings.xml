@@ -9,6 +9,9 @@
     <string name="meals_page_label">Meals Page</string>
     <string name="personal_settings_page_label">Personal Settings Page</string>
     <string name="password_settings_page_label">Password Settings Page</string>
+    <string name="email_settings_page_label">Email Settings Page</string>
+    <string name="feedback_settings_page_label">Feedback Settings Page</string>
+    <string name="terms_and_conditions_settings_page_label">Terms and Conditions Settings Page</string>
 
 
     <!--    <string name="next">Next</string>-->
@@ -22,17 +25,36 @@
     <!-- Preference Titles -->
     <string name="messages_header">Messages</string>
     <string name="sync_header">Sync</string>
-    <string name="terms_and_conditions">Terms and Conditions</string>
 
     <!-- Personal Preferences -->
-    <string name="signature_title">First and Last Name</string>
+    <string name="first_name">First Name</string>
+    <string name="last_name">Last Name</string>
     <string name="email_address">Email</string>
+
+    <!-- Change Password-->
     <string name="current_password">Current Password</string>
     <string name="new_password">New Password</string>
     <string name="confirm_password">Confirm New Password</string>
+
+    <!-- Change Email-->
     <string name="new_email">New Email</string>
-    <string name="feedback">We would love to hear your feedback</string>
-    <string name="reply_title">Default reply action</string>
+
+
+    <!-- Feedback-->
+    <string name="feedback">Please leave your feedback below</string>
+    <string name="feedback_regarding">What category would you like to leave feedback on?</string>
+    <string name="feedback_response">Overall how are we performing?</string>
+    <string name="user_response">Please tell us more</string>
+
+    <!-- Terms and Conditions-->
+    <string name="terms_and_conditions">Terms and Conditions</string>
+    <string name="terms">By sliding the bar you,\n the user agree to the following \nTerms and
+        Conditions: this is all filled in with a lot of nonsense since no one in there right
+        mind will ever spend the time to actually read this paragraph. However if you have any
+        food allergies it is on you, the user, to make the chefs here at foodie aware. If we are not
+        aware then we cannot be help responsible for any harm that may come to you or your family.
+        Be warned!</string>
+
 
     <!-- Sync Preferences -->
     <string name="sync_title">Sync email periodically</string>

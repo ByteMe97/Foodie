@@ -59,6 +59,15 @@
         <action
             android:id="@+id/action_SettingsPage_to_PasswordSettingsPage"
             app:destination="@id/PasswordSettingsPage" />
+        <action
+            android:id="@+id/action_SettingsPage_to_EmailSettingsPage"
+            app:destination="@id/EmailSettingsPage" />
+        <action
+            android:id="@+id/action_SettingsPage_to_FeedbackSettingsPage"
+            app:destination="@id/FeedbackSettingsPage" />
+        <action
+            android:id="@+id/action_SettingsPage_to_termsAndConditions"
+            app:destination="@id/termsAndConditions" />
 
     </fragment>
 
@@ -73,6 +82,27 @@
         android:id="@+id/PasswordSettingsPage"
         android:name="com.example.myfirstapp.PasswordSettings"
         android:label="@string/password_settings_page_label">
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/EmailSettingsPage"
+        android:name="com.example.myfirstapp.EmailSettings"
+        android:label="@string/email_settings_page_label">
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/FeedbackSettingsPage"
+        android:name="com.example.myfirstapp.Feedback"
+        android:label="@string/feedback_settings_page_label">
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/termsAndConditions"
+        android:name="com.example.myfirstapp.TermsAndConditions"
+        android:label="@string/terms_and_conditions_settings_page_label">
 
     </fragment>
 

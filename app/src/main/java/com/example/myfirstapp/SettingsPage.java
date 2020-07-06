@@ -41,6 +41,29 @@ public class SettingsPage extends Fragment {
             }
         });
 
+        view.findViewById(R.id.email).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                NavHostFragment.findNavController(SettingsPage.this)
+                        .navigate(R.id.action_SettingsPage_to_EmailSettingsPage);
+            }
+        });
+
+        view.findViewById(R.id.giveFeedback).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                NavHostFragment.findNavController(SettingsPage.this)
+                        .navigate(R.id.action_SettingsPage_to_FeedbackSettingsPage);
+            }
+        });
+
+        view.findViewById(R.id.termsAndConditions).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                NavHostFragment.findNavController(SettingsPage.this)
+                        .navigate(R.id.action_SettingsPage_to_termsAndConditions);
+            }
+        });
     }
 
 }

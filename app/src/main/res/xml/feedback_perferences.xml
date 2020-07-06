@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto">
+
+        <PreferenceCategory app:title="@string/sync_header">
+
+            <ListPreference
+                app:defaultValue="reply"
+                app:entries="@array/feedback_categories"
+                app:entryValues="@array/feedback_categories"
+                app:key="categories"
+                app:title="@string/feedback_regarding"
+                app:useSimpleSummaryProvider="true" />
+
+            <ListPreference
+                app:defaultValue="reply"
+                app:entries="@array/feedback_responses"
+                app:entryValues="@array/feedback_responses"
+                app:key="response"
+                app:title="@string/feedback_response"
+                app:useSimpleSummaryProvider="true" />
+
+            <EditTextPreference
+                app:key="feedback"
+                app:title="@string/user_response"
+                app:useSimpleSummaryProvider="true" />
+
+        </PreferenceCategory>
+
+
+</PreferenceScreen>

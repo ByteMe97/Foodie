@@ -1,12 +1,17 @@
 <resources>
-    <!-- Reply Preference -->
-    <string-array name="reply_entries">
-        <item>Reply</item>
-        <item>Reply to all</item>
+    <!-- Feedback Settings -->
+    <string-array name="feedback_responses">
+        <item>Very Impressed</item>
+        <item>Impressed</item>
+        <item>Mediocre</item>
+        <item>Underwhelmed</item>
+        <item>Very Underwhelmed</item>
     </string-array>
 
-    <string-array name="reply_values">
-        <item>reply</item>
-        <item>reply_all</item>
+    <string-array name="feedback_categories">
+        <item>The App</item>
+        <item>The Meals</item>
+        <item>The Service</item>
+        <item>Other</item>
     </string-array>
 </resources>
