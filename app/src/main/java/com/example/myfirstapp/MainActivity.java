@@ -2,21 +2,26 @@ package com.example.myfirstapp;
 
 import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
-
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
-
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-
-import android.view.View;
-
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ImageView;
 
+
+/**
+ * The Main Activity for the Application
+ * @author Katie LaBell and Kendra Haan
+ * @version 1.0
+ * This is the first screen to the user
+ */
 public class MainActivity extends AppCompatActivity {
 
+
+    /**
+     * Constructor used to do initial creation of a fragment
+     * @param savedInstanceState    if the fragment is being re-created from a previous saved state,
+     *                              this is the state.
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,6 +32,13 @@ public class MainActivity extends AppCompatActivity {
         animationDrawable.start();
     }
 
+
+    /**
+     * This method is used to add items to the action bar if it is present
+     * @param menu  item to add
+     *
+     * @return       true once code has finished running
+     */
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -34,6 +46,13 @@ public class MainActivity extends AppCompatActivity {
         return true;
     }
 
+
+    /**
+     * Method that implements handle action bar item clicks
+     * @param item item that was selected
+     *
+     * @return true or false depending on what was selected
+     */
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will

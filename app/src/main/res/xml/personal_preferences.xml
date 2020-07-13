@@ -13,8 +13,8 @@
             app:useSimpleSummaryProvider="true" />
 
         <EditTextPreference
-            app:key="emailAddress"
-            app:title="@string/email_address"
+            app:key="homeAddress"
+            app:title="@string/current_address"
             app:useSimpleSummaryProvider="true" />
 
 
