@@ -33,6 +33,10 @@
         android:label="@string/plans_page_label"
         tools:layout="@layout/plans_page">
 
+        <action
+            android:id="@+id/action_SecondFragment_to_FirstFragment"
+            app:destination="@id/WelcomePage" />
+
     </fragment>
 
     <fragment
