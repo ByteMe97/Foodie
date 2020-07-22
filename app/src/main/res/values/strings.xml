@@ -14,12 +14,11 @@
     <string name="terms_and_conditions_settings_page_label">Terms and Conditions Settings Page</string>
 
 
-    <!--    <string name="next">Next</string>-->
+    <!--    Fragments-->
     <string name="settings">Settings</string>
     <string name="plans">Plans</string>
     <string name="meals">Meals</string>
     <string name="previous">Previous</string>
-
     <string name="welcome">Welcome to Foodie!</string>
 
     <!-- Preference Titles -->
@@ -54,5 +53,36 @@
         food allergies it is on you, the user, to make the chefs here at foodie aware. If we are not
         aware then we cannot be help responsible for any harm that may come to you or your family.
         Be warned!</string>
+
+    <!-- Meal Options General-->
+    <string name="dish">Dish: </string>
+    <string name="nutrional_info">Nutrirional Information:</string>
+    <string name="calories">Calories</string>
+    <string name="alergies">Alergy Information</string>
+    <string name="recipie">Recipie</string>
+
+    <!-- Meal Option One-->
+    <string name="meal_option_one_name">Chicken Parmeson</string>
+
+    <!-- Meal Option Two-->
+    <string name="meal_option_two_name">Sweet Potato Tacos</string>
+
+    <!-- Meal Option Three-->
+    <string name="meal_option_three_name">White Chicken Chili</string>
+
+    <!-- Meal Option Four-->
+    <string name="meal_option_four_name">Shrimp Stir Fry</string>
+
+    <!-- Meal Option Five-->
+    <string name="meal_option_five_name">Southwestern Quinoa Salad</string>
+
+    <!-- Meal Option Six-->
+    <string name="meal_option_six_name">Pineapple Salmon</string>
+
+    <!-- Meal Option Seven-->
+    <string name="meal_option_seven_name">Sweet and Sour Cauliflower</string>
+
+    <!-- Meal Option Eight-->
+    <string name="meal_option_eight_name">Taco Stuffed Sweet Potato</string>
 
 </resources>
