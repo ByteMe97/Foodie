@@ -31,38 +31,6 @@
         android:name="com.example.myfirstapp.PlansPage"
         android:label="@string/plans_page_label"
         tools:layout="@layout/plans_page">
-
-        <action
-            android:id="@+id/action_PlansPage_to_MealOption1"
-            app:destination="@id/MealOption1" />
-
-        <action
-            android:id="@+id/action_PlansPage_to_MealOption2"
-            app:destination="@id/MealOption2" />
-
-        <action
-            android:id="@+id/action_PlansPage_to_MealOption3"
-            app:destination="@id/MealOption3" />
-
-        <action
-            android:id="@+id/action_PlansPage_to_MealOption4"
-            app:destination="@id/MealOption4" />
-
-        <action
-            android:id="@+id/action_PlansPage_to_MealOption5"
-            app:destination="@id/MealOption5" />
-
-        <action
-            android:id="@+id/action_PlansPage_to_MealOption6"
-            app:destination="@id/MealOption6" />
-
-        <action
-            android:id="@+id/action_PlansPage_to_MealOption7"
-            app:destination="@id/MealOption7" />
-
-        <action
-            android:id="@+id/action_PlansPage_to_MealOption8"
-            app:destination="@id/MealOption8" />
     </fragment>
 
     <fragment
@@ -72,8 +40,36 @@
         tools:layout="@layout/meals_page">
 
         <action
-            android:id="@+id/action_SecondFragment_to_FirstFragment"
-            app:destination="@id/WelcomePage" />
+            android:id="@+id/action_MealsPage_to_MealOption1"
+            app:destination="@id/MealOption1" />
+
+        <action
+            android:id="@+id/action_MealsPage_to_MealOption2"
+            app:destination="@id/MealOption2" />
+
+        <action
+            android:id="@+id/action_MealsPage_to_MealOption3"
+            app:destination="@id/MealOption3" />
+
+        <action
+            android:id="@+id/action_MealsPage_to_MealOption4"
+            app:destination="@id/MealOption4" />
+
+        <action
+            android:id="@+id/action_MealsPage_to_MealOption5"
+            app:destination="@id/MealOption5" />
+
+        <action
+            android:id="@+id/action_MealsPage_to_MealOption6"
+            app:destination="@id/MealOption6" />
+
+        <action
+            android:id="@+id/action_MealsPage_to_MealOption7"
+            app:destination="@id/MealOption7" />
+
+        <action
+            android:id="@+id/action_MealsPage_to_MealOption8"
+            app:destination="@id/MealOption8" />
     </fragment>
 
     <fragment

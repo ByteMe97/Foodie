@@ -1,31 +1,248 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/black"
-    tools:context=".MealsPage">
+    android:background="@color/white"
+    tools:context=".PlansPage">
 
-    <TextView
-        android:id="@+id/textview_second"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toTopOf="@id/button_second"
+    <ImageButton
+        android:id="@+id/mealOption1"
+        android:layout_width="138dp"
+        android:layout_height="123dp"
+        android:layout_marginTop="72dp"
+        android:background="@drawable/chicken_parm"
+        android:contentDescription="@string/meal_option_one_name"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.12"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/button_second"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/previous"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <TextView
+        android:id="@+id/mealOption1Text"
+        android:layout_width="138dp"
+        android:layout_height="35dp"
+        android:layout_marginBottom="1dp"
+        android:gravity="center"
+        android:text="@string/meal_option_one_name"
+        android:textColor="#050505"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/mealOption3"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.12"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textview_second" />
+        app:layout_constraintTop_toBottomOf="@+id/mealOption1"
+        app:layout_constraintVertical_bias="1.0" />
 
+    <ImageButton
+        android:id="@+id/mealOption2"
+        android:layout_width="138dp"
+        android:layout_height="123dp"
+        android:layout_marginTop="72dp"
+        android:background="@drawable/sweet_potato_taco_vegan"
+        android:contentDescription="@string/meal_option_two_name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.864"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/mealOption2Text"
+        android:layout_width="138dp"
+        android:layout_height="35dp"
+        android:layout_marginBottom="1dp"
+        android:gravity="center"
+        android:text="@string/meal_option_two_name"
+        android:textColor="#050505"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/mealOption4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.864"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mealOption2"
+        app:layout_constraintVertical_bias="1.0" />
+
+
+    <ImageButton
+        android:id="@+id/mealOption3"
+        android:layout_width="138dp"
+        android:layout_height="123dp"
+        android:layout_marginTop="36dp"
+        android:background="@drawable/white_chicken_chilli"
+        android:contentDescription="@string/meal_option_three_name"
+        app:layout_constraintEnd_toStartOf="@+id/mealOption4"
+        app:layout_constraintHorizontal_bias="0.336"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mealOption1" />
+
+    <TextView
+        android:id="@+id/mealOption3Text"
+        android:layout_width="138dp"
+        android:layout_height="35dp"
+        android:layout_marginBottom="1dp"
+        android:gravity="center"
+        android:text="@string/meal_option_three_name"
+        android:textColor="#050505"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/mealOption5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.12"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mealOption3"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <ImageButton
+        android:id="@+id/mealOption4"
+        android:layout_width="138dp"
+        android:layout_height="123dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/shrimp_stir_fry"
+        android:contentDescription="@string/meal_option_four_name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.864"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mealOption2" />
+
+
+    <TextView
+        android:id="@+id/mealOption4Text"
+        android:layout_width="138dp"
+        android:layout_height="35dp"
+        android:layout_marginBottom="1dp"
+        android:gravity="center"
+        android:text="@string/meal_option_four_name"
+        android:textColor="#050505"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/mealOption6"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.864"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mealOption4"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <ImageButton
+        android:id="@+id/mealOption5"
+        android:layout_width="138dp"
+        android:layout_height="123dp"
+        android:layout_marginTop="36dp"
+        android:background="@drawable/southwestern_quinoa_salad"
+        android:contentDescription="@string/meal_option_five_name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.12"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mealOption3" />
+
+    <TextView
+        android:id="@+id/mealOption5Text"
+        android:layout_width="138dp"
+        android:layout_height="35dp"
+        android:layout_marginBottom="1dp"
+        android:gravity="center"
+        android:text="@string/meal_option_five_name"
+        android:textColor="#050505"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/mealOption7"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.12"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mealOption5"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <ImageButton
+        android:id="@+id/mealOption6"
+        android:layout_width="138dp"
+        android:layout_height="123dp"
+        android:layout_marginStart="58dp"
+        android:layout_marginLeft="58dp"
+        android:layout_marginTop="36dp"
+        android:background="@drawable/pineapple_salmon"
+        android:contentDescription="@string/meal_option_six_name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.159"
+        app:layout_constraintStart_toEndOf="@+id/mealOption5"
+        app:layout_constraintTop_toBottomOf="@+id/mealOption4" />
+
+    <TextView
+        android:id="@+id/mea6Option1Text"
+        android:layout_width="138dp"
+        android:layout_height="35dp"
+        android:layout_marginBottom="1dp"
+        android:gravity="center"
+        android:text="@string/meal_option_six_name"
+        android:textColor="#050505"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.864"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mealOption6"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <ImageButton
+        android:id="@+id/mealOption7"
+        android:layout_width="138dp"
+        android:layout_height="123dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/sweet_and_sour_cauliflower"
+        android:contentDescription="@string/meal_option_seven_name"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/mealOption8"
+        app:layout_constraintHorizontal_bias="0.336"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mealOption5"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/mea7Option1Text"
+        android:layout_width="138dp"
+        android:layout_height="35dp"
+        android:layout_marginBottom="1dp"
+        android:gravity="center"
+        android:text="@string/meal_option_seven_name"
+        android:textColor="#050505"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.12"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mealOption7"
+        app:layout_constraintVertical_bias="1.0" />
+
+
+    <ImageButton
+        android:id="@+id/mealOption8"
+        android:layout_width="138dp"
+        android:layout_height="123dp"
+        android:layout_marginTop="36dp"
+        android:background="@drawable/taco_stuffed_sweet_potato"
+        android:contentDescription="@string/meal_option_eight_name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.864"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mealOption6" />
+
+    <TextView
+        android:id="@+id/mea8Option1Text"
+        android:layout_width="138dp"
+        android:layout_height="35dp"
+        android:layout_marginBottom="1dp"
+        android:gravity="center"
+        android:text="@string/meal_option_eight_name"
+        android:textColor="#050505"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.864"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mealOption8"
+        app:layout_constraintVertical_bias="1.0" />
 </androidx.constraintlayout.widget.ConstraintLayout>
 
 

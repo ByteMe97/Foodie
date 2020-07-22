@@ -52,68 +52,6 @@ public class PlansPage extends Fragment {
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        view.findViewById(R.id.mealOption1).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                NavHostFragment.findNavController(PlansPage.this)
-                        .navigate(R.id.action_PlansPage_to_MealOption1);
-            }
-        });
 
-        view.findViewById(R.id.mealOption2).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                NavHostFragment.findNavController(PlansPage.this)
-                        .navigate(R.id.action_PlansPage_to_MealOption2);
-            }
-        });
-
-        view.findViewById(R.id.mealOption3).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                NavHostFragment.findNavController(PlansPage.this)
-                        .navigate(R.id.action_PlansPage_to_MealOption3);
-            }
-        });
-
-        view.findViewById(R.id.mealOption4).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                NavHostFragment.findNavController(PlansPage.this)
-                        .navigate(R.id.action_PlansPage_to_MealOption4);
-            }
-        });
-
-        view.findViewById(R.id.mealOption5).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                NavHostFragment.findNavController(PlansPage.this)
-                        .navigate(R.id.action_PlansPage_to_MealOption5);
-            }
-        });
-
-        view.findViewById(R.id.mealOption6).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                NavHostFragment.findNavController(PlansPage.this)
-                        .navigate(R.id.action_PlansPage_to_MealOption6);
-            }
-        });
-
-        view.findViewById(R.id.mealOption7).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                NavHostFragment.findNavController(PlansPage.this)
-                        .navigate(R.id.action_PlansPage_to_MealOption7);
-            }
-        });
-
-        view.findViewById(R.id.mealOption8).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                NavHostFragment.findNavController(PlansPage.this)
-                        .navigate(R.id.action_PlansPage_to_MealOption8);
-            }
-        });
     }
 }
