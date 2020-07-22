@@ -12,6 +12,14 @@
     <string name="email_settings_page_label">Email Settings Page</string>
     <string name="feedback_settings_page_label">Feedback Settings Page</string>
     <string name="terms_and_conditions_settings_page_label">Terms and Conditions Settings Page</string>
+    <string name="meal_option_one_page_label">Meal Option 1</string>
+    <string name="meal_option_two_page_label">Meal Option 2</string>
+    <string name="meal_option_three_page_label">Meal Option 3</string>
+    <string name="meal_option_four_page_label">Meal Option 4</string>
+    <string name="meal_option_five_page_label">Meal Option 5</string>
+    <string name="meal_option_six_page_label">Meal Option 6</string>
+    <string name="meal_option_seven_page_label">Meal Option 7</string>
+    <string name="meal_option_eight_page_label">Meal Option 8</string>
 
 
     <!--    Fragments-->
