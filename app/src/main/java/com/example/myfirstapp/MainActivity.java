@@ -7,6 +7,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ImageView;
 
+import com.example.myfirstapp.R;
 
 /**
  * The Main Activity for the Application
