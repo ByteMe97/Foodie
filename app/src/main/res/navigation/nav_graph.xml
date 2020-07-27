@@ -24,8 +24,6 @@
             app:destination="@+id/SettingsPage" />
     </fragment>
 
-
-
     <fragment
         android:id="@+id/PlansPage"
         android:name="com.example.myfirstapp.PlansPage"
@@ -172,5 +170,6 @@
         android:name="com.example.myfirstapp.MealOptionEight"
         android:label="@string/meal_option_eight_page_label">
     </fragment>
+
 
 </navigation>

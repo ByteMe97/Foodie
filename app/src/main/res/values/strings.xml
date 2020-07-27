@@ -28,6 +28,7 @@
     <string name="meals">Meals</string>
     <string name="previous">Previous</string>
     <string name="welcome">Welcome to Foodie!</string>
+    <string name="login">Login/Register</string>
 
     <!-- Preference Titles -->
     <string name="messages_header">Messages</string>
@@ -187,8 +188,8 @@
     <string name="text_already_member">Already a member? Login</string>
     <string name="error_email_exists">Email Already Exists</string>
     <string name="error_password_match">Password Does Not Matches</string>
-    <string name="error_valid_email_password">Wrong Email or Password</string>
+    <string name="error_valid_email_password">Incorrect Email or Password</string>
     <string name="text_hello">Hello,</string>
-    <string name="text_title">Android Tutorials Hub</string>
+    <string name="text_title">Foodie Registered Users</string>
 
 </resources>

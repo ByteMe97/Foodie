@@ -1,5 +1,6 @@
 package com.example.myfirstapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -9,6 +10,8 @@ import androidx.navigation.fragment.NavHostFragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.example.myfirstapp.activities.LoginActivity;
 
 public class SettingsPage extends Fragment {
 
@@ -59,19 +62,11 @@ public class SettingsPage extends Fragment {
             }
         });
 
-        view.findViewById(R.id.password).setOnClickListener(new View.OnClickListener() {
+        view.findViewById(R.id.button_login).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                NavHostFragment.findNavController(SettingsPage.this)
-                        .navigate(R.id.action_SettingsPage_to_PasswordSettingsPage);
-            }
-        });
-
-        view.findViewById(R.id.email).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                NavHostFragment.findNavController(SettingsPage.this)
-                        .navigate(R.id.action_SettingsPage_to_EmailSettingsPage);
+                Intent intent = new Intent(getActivity(), LoginActivity.class);
+                startActivity(intent);
             }
         });
 
