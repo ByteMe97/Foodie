@@ -8,4 +8,11 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="screenBackground">#FFEE58</color>
+
+    <color name="colorPrimary">#FFBB86FC</color>
+    <color name="colorPrimaryDark">#FF3700B3</color>
+    <color name="colorAccent">#FF6200EE</color>
+    <color name="colorBackground">#FFBB86FC</color>
+    <color name="colorText">#FFFFFF</color>
+    <color name="colorTextHint">#FF6200EE</color>
 </resources>

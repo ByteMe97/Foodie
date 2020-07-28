@@ -13,28 +13,28 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".WelcomePage"
-    android:background="#00FDE406">
+    android:background="#00FDE406"
+    tools:context=".WelcomePage">
 
 
-<!--    <TextView-->
-<!--        android:id="@+id/textview_first"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_alignParentEnd="true"-->
-<!--        android:layout_alignParentRight="true"-->
-<!--        android:layout_alignParentBottom="true"-->
-<!--        android:background="@color/teal_200"-->
-<!--        android:fontFamily="sans-serif-medium"-->
-<!--        android:text="@string/welcome"-->
-<!--        android:textAppearance="@style/TextAppearance.AppCompat.Body1"-->
-<!--        android:textColor="@color/black"-->
-<!--        android:textSize="36sp"-->
-<!--        android:textStyle="bold"-->
-<!--        android:visibility="visible"-->
-<!--        tools:ignore="MissingConstraints"-->
-<!--        tools:layout_editor_absoluteX="56dp"-->
-<!--        tools:layout_editor_absoluteY="66dp" />-->
+    <!--    <TextView-->
+    <!--        android:id="@+id/textview_first"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_alignParentEnd="true"-->
+    <!--        android:layout_alignParentRight="true"-->
+    <!--        android:layout_alignParentBottom="true"-->
+    <!--        android:background="@color/teal_200"-->
+    <!--        android:fontFamily="sans-serif-medium"-->
+    <!--        android:text="@string/welcome"-->
+    <!--        android:textAppearance="@style/TextAppearance.AppCompat.Body1"-->
+    <!--        android:textColor="@color/black"-->
+    <!--        android:textSize="36sp"-->
+    <!--        android:textStyle="bold"-->
+    <!--        android:visibility="visible"-->
+    <!--        tools:ignore="MissingConstraints"-->
+    <!--        tools:layout_editor_absoluteX="56dp"-->
+    <!--        tools:layout_editor_absoluteY="66dp" />-->
 
     <Button
         android:id="@+id/button_settings"
@@ -90,5 +90,17 @@
         app:layout_constraintStart_toStartOf="parent"
 
         app:layout_constraintVertical_bias="1.0" />
+
+<!--    <Button-->
+<!--        android:id="@+id/button_login"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="75dp"-->
+<!--        android:text="@string/login"-->
+<!--        android:textColor="@color/white"-->
+<!--        android:visibility="visible"-->
+<!--        app:layout_constraintTop_toBottomOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0."-->
+<!--        app:layout_constraintVertical_bias="1" />-->
+
     <!--        app:layout_constraintTop_toBottomOf="@id/textview_first"-->
 </androidx.constraintlayout.widget.ConstraintLayout>
