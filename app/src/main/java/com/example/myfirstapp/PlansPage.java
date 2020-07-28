@@ -9,6 +9,8 @@ import androidx.navigation.fragment.NavHostFragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 
 
 /**
@@ -16,6 +18,8 @@ import android.view.ViewGroup;
  */
 public class PlansPage extends Fragment {
 
+    ListView lv;
+    ArrayAdapter<String> adapter;
 
     /**
      * Called to have the fragment instantiate its user interface view.
@@ -53,5 +57,6 @@ public class PlansPage extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
 
+//        adapter = new ArrayAdapter<String>(getContext(), android.R.layout.simple_list_item_1, "@array/chosen_meals");
     }
 }

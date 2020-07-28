@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -12,6 +13,8 @@ import androidx.fragment.app.Fragment;
  * Class used to show last meal option
  */
 public class MealOptionEight extends Fragment {
+
+    Button mo8;
 
     /**
      * Called to have the fragment instantiate its user interface view.
