@@ -101,9 +101,16 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         }
         if (databaseHelper.checkUser(textInputEditTextEmail.getText().toString().trim()
                 , textInputEditTextPassword.getText().toString().trim())) {
+            // Snack Bar to show successful login
+            Snackbar successSnack = Snackbar.make(nestedScrollView, "Login Successful", Snackbar.LENGTH_LONG);
+            View view = successSnack.getView();
+            FrameLayout.LayoutParams params =(FrameLayout.LayoutParams)view.getLayoutParams();
+            params.gravity = Gravity.TOP;
+            view.setLayoutParams(params);
+            successSnack.show();
             onBackPressed();
         } else {
-            // Snack Bar to show success message that record is wrong
+            // Snack Bar to show failure message
             Snackbar failureSnack = Snackbar.make(nestedScrollView, getString(R.string.error_valid_email_password), Snackbar.LENGTH_LONG);
             View view = failureSnack.getView();
             FrameLayout.LayoutParams params =(FrameLayout.LayoutParams)view.getLayoutParams();

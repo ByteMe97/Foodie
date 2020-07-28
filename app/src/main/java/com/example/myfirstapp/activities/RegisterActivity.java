@@ -2,7 +2,9 @@ package com.example.myfirstapp.activities;
 
 
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.View;
+import android.widget.FrameLayout;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -28,11 +30,19 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
     private TextInputLayout textInputLayoutEmail;
     private TextInputLayout textInputLayoutPassword;
     private TextInputLayout textInputLayoutConfirmPassword;
+    private TextInputLayout textInputLayoutAddress;
+    private TextInputLayout textInputLayoutCity;
+    private TextInputLayout textInputLayoutState;
+    private TextInputLayout textInputLayoutZipcode;
 
     private TextInputEditText textInputEditTextName;
     private TextInputEditText textInputEditTextEmail;
     private TextInputEditText textInputEditTextPassword;
     private TextInputEditText textInputEditTextConfirmPassword;
+    private TextInputEditText textInputEditTextAddress;
+    private TextInputEditText textInputEditTextCity;
+    private TextInputEditText textInputEditTextState;
+    private TextInputEditText textInputEditTextZipcode;
 
     private AppCompatButton appCompatButtonRegister;
     private AppCompatTextView appCompatTextViewLoginLink;
@@ -57,21 +67,26 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
      */
     private void initViews() {
         nestedScrollView = (NestedScrollView) findViewById(R.id.nestedScrollView);
-
         textInputLayoutName = (TextInputLayout) findViewById(R.id.textInputLayoutName);
         textInputLayoutEmail = (TextInputLayout) findViewById(R.id.textInputLayoutEmail);
         textInputLayoutPassword = (TextInputLayout) findViewById(R.id.textInputLayoutPassword);
         textInputLayoutConfirmPassword = (TextInputLayout) findViewById(R.id.textInputLayoutConfirmPassword);
+        textInputLayoutAddress = (TextInputLayout) findViewById(R.id.textInputLayoutAddress);
+        textInputLayoutCity = (TextInputLayout) findViewById(R.id.textInputLayoutCity);
+        textInputLayoutState = (TextInputLayout) findViewById(R.id.textInputLayoutState);
+        textInputLayoutZipcode = (TextInputLayout) findViewById(R.id.textInputLayoutZipcode);
 
         textInputEditTextName = (TextInputEditText) findViewById(R.id.textInputEditTextName);
         textInputEditTextEmail = (TextInputEditText) findViewById(R.id.textInputEditTextEmail);
         textInputEditTextPassword = (TextInputEditText) findViewById(R.id.textInputEditTextPassword);
         textInputEditTextConfirmPassword = (TextInputEditText) findViewById(R.id.textInputEditTextConfirmPassword);
+        textInputEditTextAddress = (TextInputEditText) findViewById(R.id.textInputEditTextAddress);
+        textInputEditTextCity = (TextInputEditText) findViewById(R.id.textInputEditTextCity);
+        textInputEditTextState = (TextInputEditText) findViewById(R.id.textInputEditTextState);
+        textInputEditTextZipcode = (TextInputEditText) findViewById(R.id.textInputEditTextZipcode);
 
         appCompatButtonRegister = (AppCompatButton) findViewById(R.id.appCompatButtonRegister);
-
         appCompatTextViewLoginLink = (AppCompatTextView) findViewById(R.id.appCompatTextViewLoginLink);
-
     }
 
     /**
@@ -139,19 +154,32 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
             user.setName(textInputEditTextName.getText().toString().trim());
             user.setEmail(textInputEditTextEmail.getText().toString().trim());
             user.setPassword(textInputEditTextPassword.getText().toString().trim());
+            user.setAddress(textInputEditTextAddress.getText().toString().trim());
+            user.setCity(textInputEditTextCity.getText().toString().trim());
+            user.setState(textInputEditTextState.getText().toString().trim());
+            user.setZipcode(Integer.parseInt(textInputEditTextZipcode.getText().toString().trim()));
 
             databaseHelper.addUser(user);
 
             // Snack Bar to show success message that record saved successfully
-            Snackbar.make(nestedScrollView, getString(R.string.success_message), Snackbar.LENGTH_LONG).show();
-            emptyInputEditText();
+            Snackbar successSnack = Snackbar.make(nestedScrollView, getString(R.string.success_message), Snackbar.LENGTH_LONG);
+            View view = successSnack.getView();
+            FrameLayout.LayoutParams params =(FrameLayout.LayoutParams)view.getLayoutParams();
+            params.gravity = Gravity.TOP;
+            view.setLayoutParams(params);
+            successSnack.show();
 
+            emptyInputEditText();
 
         } else {
             // Snack Bar to show error message that record already exists
-            Snackbar.make(nestedScrollView, getString(R.string.error_email_exists), Snackbar.LENGTH_LONG).show();
+            Snackbar failureSnack = Snackbar.make(nestedScrollView, getString(R.string.error_email_exists), Snackbar.LENGTH_LONG);
+            View view = failureSnack.getView();
+            FrameLayout.LayoutParams params =(FrameLayout.LayoutParams)view.getLayoutParams();
+            params.gravity = Gravity.TOP;
+            view.setLayoutParams(params);
+            failureSnack.show();
         }
-
 
     }
 
@@ -163,5 +191,9 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         textInputEditTextEmail.setText(null);
         textInputEditTextPassword.setText(null);
         textInputEditTextConfirmPassword.setText(null);
+        textInputEditTextAddress.setText(null);
+        textInputEditTextCity.setText(null);
+        textInputEditTextState.setText(null);
+        textInputEditTextZipcode.setText(null);
     }
 }
