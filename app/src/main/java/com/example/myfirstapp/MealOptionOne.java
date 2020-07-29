@@ -1,9 +1,12 @@
 package com.example.myfirstapp;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CompoundButton;
+import android.widget.Switch;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -13,6 +16,16 @@ import androidx.preference.PreferenceFragmentCompat;
  * Class used to show first meal option
  */
 public class MealOptionOne extends Fragment {
+
+    private MealOptionOne.MealOption1Listener listener;
+    private Switch sw1;
+
+    /**
+     * Interface used to instantiate a listener
+     */
+    public interface MealOption1Listener {
+        void onMeal1Chosen(String input);
+    }
 
     /**
      * Called to have the fragment instantiate its user interface view.
@@ -54,5 +67,35 @@ public class MealOptionOne extends Fragment {
      */
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
+        sw1 = (Switch)view.findViewById(R.id.AddMealOptionOne);
+        sw1.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    String input = getString(R.string.meal_option_one_name);
+                    listener.onMeal1Chosen(input);
+
+                }
+            }
+        });
+    }
+
+
+    @Override
+    public void onAttach(@NonNull Context context) {
+        super.onAttach(context);
+        if(context instanceof MealOptionOne.MealOption1Listener){
+            listener = (MealOptionOne.MealOption1Listener) context;
+        }
+        else{
+            throw new RuntimeException(context.toString() +
+                    "must implement MealOption1Listener");
+        }
+    }
+
+    @Override
+    public void onDetach() {
+        super.onDetach();
+        listener = null;
     }
 }

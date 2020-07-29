@@ -20,7 +20,18 @@ import java.util.List;
  * @version 1.0
  * This is the first screen to the user
  */
-public class MainActivity extends AppCompatActivity implements MealOptionEight.MealOption8Listener {
+public class MainActivity extends AppCompatActivity implements MealOptionOne.MealOption1Listener,
+        MealOptionTwo.MealOption2Listener, MealOptionThree.MealOption3Listener,
+        MealOptionFour.MealOption4Listener, MealOptionFive.MealOption5Listener,
+        MealOptionSix.MealOption6Listener, MealOptionSeven.MealOption7Listener,
+        MealOptionEight.MealOption8Listener {
+    private MealOptionEight meal1;
+    private MealOptionEight meal2;
+    private MealOptionEight meal3;
+    private MealOptionEight meal4;
+    private MealOptionFive meal5;
+    private MealOptionEight meal6;
+    private MealOptionEight meal7;
     private MealOptionEight meal8;
     private PlansPage plansPage;
     SharedPreferences sp;
@@ -83,12 +94,51 @@ public class MainActivity extends AppCompatActivity implements MealOptionEight.M
         return super.onOptionsItemSelected(item);
     }
 
+    @Override
+    public void onMeal1Chosen(String input) {
+        meals.add(input);
+        PrefConfig.writeListInPref(getApplicationContext(), meals);
+    }
+
+    @Override
+    public void onMeal2Chosen(String input) {
+        meals.add(input);
+        PrefConfig.writeListInPref(getApplicationContext(), meals);
+    }
+
+    @Override
+    public void onMeal3Chosen(String input) {
+        meals.add(input);
+        PrefConfig.writeListInPref(getApplicationContext(), meals);
+    }
+
+    @Override
+    public void onMeal4Chosen(String input) {
+        meals.add(input);
+        PrefConfig.writeListInPref(getApplicationContext(), meals);
+    }
+
+    @Override
+    public void onMeal5Chosen(String input) {
+        meals.add(input);
+        PrefConfig.writeListInPref(getApplicationContext(), meals);
+    }
+
+    @Override
+    public void onMeal6Chosen(String input) {
+        meals.add(input);
+        PrefConfig.writeListInPref(getApplicationContext(), meals);
+    }
+    @Override
+    public void onMeal7Chosen(String input) {
+        meals.add(input);
+        PrefConfig.writeListInPref(getApplicationContext(), meals);
+    }
 
     @Override
     public void onMeal8Chosen(String input) {
         meals.add(input);
         PrefConfig.writeListInPref(getApplicationContext(), meals);
-
-   //     plansPage.updatePlans(input);
     }
+
 }

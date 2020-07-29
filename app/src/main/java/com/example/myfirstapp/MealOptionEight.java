@@ -20,10 +20,13 @@ public class MealOptionEight extends Fragment {
     private MealOption8Listener listener;
     private Switch sw8;
 
-
+    /**
+     * Interface used to instantiate a listener
+     */
     public interface MealOption8Listener {
         void onMeal8Chosen(String input);
     }
+
     /**
      * Called to have the fragment instantiate its user interface view.
      * @param inflater              The LayoutInflater object that can be used to inflate any views
@@ -47,9 +50,7 @@ public class MealOptionEight extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.meal_option_eight, container, false);
         view.setBackgroundColor(getResources().getColor(R.color.white));
-
         return view;
-
     }
 
 
@@ -65,9 +66,6 @@ public class MealOptionEight extends Fragment {
      */
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
-//        String input = "meal_option_eight_name";
-//        listener.onMeal8Chosen(input);
 
         sw8 = (Switch)view.findViewById(R.id.AddMealOptionEight);
         sw8.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
@@ -85,8 +83,8 @@ public class MealOptionEight extends Fragment {
     @Override
     public void onAttach(@NonNull Context context) {
         super.onAttach(context);
-        if(context instanceof  MealOption8Listener){
-            listener = (MealOption8Listener) context;
+        if(context instanceof MealOptionEight.MealOption8Listener){
+            listener = (MealOptionEight.MealOption8Listener) context;
         }
         else{
             throw new RuntimeException(context.toString() +

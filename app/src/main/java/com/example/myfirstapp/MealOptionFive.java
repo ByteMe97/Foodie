@@ -1,9 +1,12 @@
 package com.example.myfirstapp;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CompoundButton;
+import android.widget.Switch;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -13,6 +16,15 @@ import androidx.fragment.app.Fragment;
  */
 public class MealOptionFive extends Fragment {
 
+    private MealOptionFive.MealOption5Listener listener;
+    private Switch sw5;
+
+    /**
+     * Interface used to instantiate a listener
+     */
+    public interface MealOption5Listener {
+        void onMeal5Chosen(String input);
+    }
     /**
      * Called to have the fragment instantiate its user interface view.
      * @param inflater              The LayoutInflater object that can be used to inflate any views
@@ -37,7 +49,6 @@ public class MealOptionFive extends Fragment {
         View view = inflater.inflate(R.layout.meal_option_five, container, false);
         view.setBackgroundColor(getResources().getColor(R.color.white));
         return view;
-
     }
 
 
@@ -53,5 +64,34 @@ public class MealOptionFive extends Fragment {
      */
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
+        sw5 = (Switch)view.findViewById(R.id.AddMealOptionFive);
+        sw5.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    String input = getString(R.string.meal_option_five_name);
+                    listener.onMeal5Chosen(input);
+
+                }
+            }
+        });
+    }
+
+    @Override
+    public void onAttach(@NonNull Context context) {
+        super.onAttach(context);
+        if(context instanceof MealOptionFive.MealOption5Listener){
+            listener = (MealOptionFive.MealOption5Listener) context;
+        }
+        else{
+            throw new RuntimeException(context.toString() +
+                    "must implement MealOption5Listener");
+        }
+    }
+
+    @Override
+    public void onDetach() {
+        super.onDetach();
+        listener = null;
     }
 }
