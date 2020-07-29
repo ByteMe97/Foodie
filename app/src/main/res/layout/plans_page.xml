@@ -10,57 +10,87 @@ xmlns:android="http://schemas.android.com/apk/res/android"
 
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/servingSize"
         android:layout_width="184dp"
         android:layout_height="45dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="88dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginTop="60dp"
         android:text="Servings per Meal"
+        android:textSize="16sp"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/button2"
         android:layout_width="116dp"
         android:layout_height="70dp"
         android:layout_marginStart="80dp"
         android:layout_marginLeft="80dp"
-        android:layout_marginTop="31dp"
+        android:layout_marginTop="8dp"
         android:text="2"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3" />
-
+        app:layout_constraintTop_toBottomOf="@+id/servingSize" />
 
     <Button
-        android:id="@+id/button2"
-        android:layout_width="114dp"
-        android:layout_height="67dp"
-        android:layout_marginTop="31dp"
+        android:id="@+id/button4"
+        android:layout_width="117dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="8dp"
         android:text="4"
-        app:layout_constraintStart_toEndOf="@+id/button"
-        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+        app:layout_constraintStart_toEndOf="@+id/button2"
+        app:layout_constraintTop_toBottomOf="@+id/servingSize" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/pricePerServing"
         android:layout_width="184dp"
         android:layout_height="45dp"
-        android:layout_marginStart="100dp"
-        android:layout_marginLeft="100dp"
-        android:layout_marginTop="116dp"
+        android:layout_marginTop="76dp"
         android:text="Each Serving Cost $7.99"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+        app:layout_constraintTop_toBottomOf="@+id/servingSize" />
 
     <ListView
         android:id="@+id/chosenMeals"
-        android:layout_width="405dp"
-        android:layout_height="434dp"
+        android:layout_width="401dp"
+        android:layout_height="478dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginLeft="12dp"
         android:layout_marginTop="36dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2"
-        app:layout_constraintVertical_bias="0.838" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.805" />
+
+    <TextView
+        android:id="@+id/totalCost"
+        android:layout_width="141dp"
+        android:layout_height="39dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="4dp"
+        android:text="Total Cost"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/chosenMeals"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/costs"
+        android:layout_width="98dp"
+        android:layout_height="39dp"
+        android:layout_marginStart="108dp"
+        android:layout_marginLeft="108dp"
+        android:layout_marginTop="4dp"
+        android:text="$0.00"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/totalCost"
+        app:layout_constraintTop_toBottomOf="@+id/chosenMeals"
+        app:layout_constraintVertical_bias="0.0" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -34,4 +34,11 @@ public class PrefConfig {
         List<String> list = gson.fromJson(jsonString, type);
         return list;
     }
+
+    public static int determineSizeOfList(Context context){
+
+        List<String> list =readListFromPref(context);
+        return list.size();
+    }
+
 }

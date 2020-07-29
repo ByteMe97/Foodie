@@ -1,25 +1,17 @@
 package com.example.myfirstapp;
 
-import android.content.Context;
-import android.content.SharedPreferences;
 import android.os.Bundle;
-
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.navigation.fragment.NavHostFragment;
-import androidx.preference.PreferenceManager;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import javax.xml.transform.sax.SAXResult;
-
 
 /**
  * Class that allows the user to chose which meal plan to purchase
@@ -27,8 +19,9 @@ import javax.xml.transform.sax.SAXResult;
 public class PlansPage extends Fragment {
 
     List<String> meals = new ArrayList<String>();
-    SharedPreferences sp;
-
+    double cost;
+    int listSize;
+    TextView finalCost;
 
 
     /**
@@ -51,7 +44,6 @@ public class PlansPage extends Fragment {
             LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState) {
 
-        // Inflate the layout for this fragment
         return inflater.inflate(R.layout.plans_page, container, false);
     }
     /**
@@ -68,22 +60,32 @@ public class PlansPage extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         meals = PrefConfig.readListFromPref(getContext());
-       // sp = getActivity().getSharedPreferences("meals", Context.MODE_PRIVATE);
-
+        listSize = PrefConfig.determineSizeOfList(getContext());
+        finalCost = (TextView) view.findViewById(R.id.costs);
+      // b2 = (Button) view.findViewById(R.id.button2);
+        view.findViewById(R.id.button2).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                updateDisplay(2, view);
+            }
+        });
+        view.findViewById(R.id.button4).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                updateDisplay(4, view);
+            }
+        });
 
         ListView listView = (ListView) view.findViewById(R.id.chosenMeals);
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(getContext(),
                 R.layout.activity_listview, meals);
-
         listView.setAdapter(adapter);
-
-//        adapter = new ArrayAdapter<String>(getContext(), android.R.layout.simple_list_item_1, "@array/chosen_meals");
     }
 
-//    public void updatePlans(String newMeal){
-//        meals.add(newMeal);
-//    }
 
-
+    public void updateDisplay(int servingSize, View view){
+        cost = listSize * 7.99 * servingSize;
+        finalCost.setText("$" + cost);
+    }
 
 }
