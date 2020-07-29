@@ -1,10 +1,13 @@
 package com.example.myfirstapp;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.CompoundButton;
+import android.widget.Switch;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -14,8 +17,13 @@ import androidx.fragment.app.Fragment;
  */
 public class MealOptionEight extends Fragment {
 
-    Button mo8;
+    private MealOption8Listener listener;
+    private Switch sw8;
 
+
+    public interface MealOption8Listener {
+        void onMeal8Chosen(String input);
+    }
     /**
      * Called to have the fragment instantiate its user interface view.
      * @param inflater              The LayoutInflater object that can be used to inflate any views
@@ -39,6 +47,7 @@ public class MealOptionEight extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.meal_option_eight, container, false);
         view.setBackgroundColor(getResources().getColor(R.color.white));
+
         return view;
 
     }
@@ -56,5 +65,38 @@ public class MealOptionEight extends Fragment {
      */
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
+//        String input = "meal_option_eight_name";
+//        listener.onMeal8Chosen(input);
+
+        sw8 = (Switch)view.findViewById(R.id.AddMealOptionEight);
+        sw8.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    String input = getString(R.string.meal_option_eight_name);
+                    listener.onMeal8Chosen(input);
+
+                }
+            }
+        });
+    }
+
+
+    @Override
+    public void onAttach(@NonNull Context context) {
+        super.onAttach(context);
+        if(context instanceof  MealOption8Listener){
+            listener = (MealOption8Listener) context;
+        }
+        else{
+            throw new RuntimeException(context.toString() +
+                    "must implement MealOption8Listener");
+        }
+    }
+
+    @Override
+    public void onDetach() {
+        super.onDetach();
+        listener = null;
     }
 }

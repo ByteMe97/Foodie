@@ -16,6 +16,7 @@
     </string-array>
 
     <string-array name="chosen_meals">
-
+        <item> Meal One</item>
+        <item> Meal Two</item>
     </string-array>
 </resources>

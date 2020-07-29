@@ -1,5 +1,7 @@
 package com.example.myfirstapp;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
@@ -9,14 +11,20 @@ import android.widget.ImageView;
 
 import com.example.myfirstapp.R;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * The Main Activity for the Application
  * @author Katie LaBell and Kendra Haan
  * @version 1.0
  * This is the first screen to the user
  */
-public class MainActivity extends AppCompatActivity {
-
+public class MainActivity extends AppCompatActivity implements MealOptionEight.MealOption8Listener {
+    private MealOptionEight meal8;
+    private PlansPage plansPage;
+    SharedPreferences sp;
+    List<String> meals = new ArrayList<String>();
 
     /**
      * Constructor used to do initial creation of a fragment
@@ -28,9 +36,15 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        plansPage = new PlansPage();
+
+        sp = getSharedPreferences("meals", Context.MODE_PRIVATE);
+
         ImageView iv_background = findViewById(R.id.iv_background);
         AnimationDrawable animationDrawable = (AnimationDrawable)  iv_background.getDrawable();
         animationDrawable.start();
+
+
     }
 
 
@@ -70,5 +84,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+    @Override
+    public void onMeal8Chosen(String input) {
+        meals.add(input);
+        PrefConfig.writeListInPref(getApplicationContext(), meals);
 
+   //     plansPage.updatePlans(input);
+    }
 }
