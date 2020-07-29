@@ -77,9 +77,6 @@
         tools:layout="@layout/settings">
 
         <action
-            android:id="@+id/action_SettingsPage_to_PersonalSettingsPage"
-            app:destination="@id/PersonalSettingsPage" />
-        <action
             android:id="@+id/action_SettingsPage_to_FeedbackSettingsPage"
             app:destination="@id/FeedbackSettingsPage" />
         <action
@@ -87,11 +84,6 @@
             app:destination="@id/termsAndConditions" />
     </fragment>
 
-    <fragment
-        android:id="@+id/PersonalSettingsPage"
-        android:name="com.example.myfirstapp.PersonalSettings"
-        android:label="@string/personal_settings_page_label">
-    </fragment>
 
     <fragment
         android:id="@+id/FeedbackSettingsPage"

@@ -15,7 +15,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     // Database Version
     private static final int DATABASE_VERSION = 1;
     // Database Name
-    private static final String DATABASE_NAME = "UserManager.db";
+    private static final String DATABASE_NAME = "FoodieUsers.db";
     // User table name
     private static final String TABLE_USER = "user";
     // User Table Columns names
@@ -23,12 +23,25 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     private static final String COLUMN_USER_NAME = "user_name";
     private static final String COLUMN_USER_EMAIL = "user_email";
     private static final String COLUMN_USER_PASSWORD = "user_password";
+    private static final String COLUMN_USER_ADDRESS = "user_address";
+    private static final String COLUMN_USER_CITY = "user_city";
+    private static final String COLUMN_USER_STATE = "user_state";
+    private static final String COLUMN_USER_ZIPCODE = "user_zipcode";
+
     // create table sql query
     private String CREATE_USER_TABLE = "CREATE TABLE " + TABLE_USER + "("
-            + COLUMN_USER_ID + " INTEGER PRIMARY KEY AUTOINCREMENT," + COLUMN_USER_NAME + " TEXT,"
-            + COLUMN_USER_EMAIL + " TEXT," + COLUMN_USER_PASSWORD + " TEXT" + ")";
+            + COLUMN_USER_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
+            + COLUMN_USER_NAME + " TEXT,"
+            + COLUMN_USER_EMAIL + " TEXT,"
+            + COLUMN_USER_PASSWORD + " TEXT,"
+            + COLUMN_USER_ADDRESS + " TEXT,"
+            + COLUMN_USER_CITY + " TEXT,"
+            + COLUMN_USER_STATE + " TEXT,"
+            + COLUMN_USER_ZIPCODE + " INT" + ")";
+
     // drop table sql query
     private String DROP_USER_TABLE = "DROP TABLE IF EXISTS " + TABLE_USER;
+
     /**
      * Constructor
      *
@@ -59,6 +72,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(COLUMN_USER_NAME, user.getName());
         values.put(COLUMN_USER_EMAIL, user.getEmail());
         values.put(COLUMN_USER_PASSWORD, user.getPassword());
+        values.put(COLUMN_USER_ADDRESS, user.getAddress());
+        values.put(COLUMN_USER_CITY, user.getCity());
+        values.put(COLUMN_USER_STATE, user.getState());
+        values.put(COLUMN_USER_ZIPCODE, user.getZipcode());
         // Inserting Row
         db.insert(TABLE_USER, null, values);
         db.close();
@@ -74,7 +91,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 COLUMN_USER_ID,
                 COLUMN_USER_EMAIL,
                 COLUMN_USER_NAME,
-                COLUMN_USER_PASSWORD
+                COLUMN_USER_PASSWORD,
+                COLUMN_USER_ADDRESS,
+                COLUMN_USER_CITY,
+                COLUMN_USER_STATE,
+                COLUMN_USER_ZIPCODE
         };
         // sorting orders
         String sortOrder =
@@ -89,10 +110,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
          */
         Cursor cursor = db.query(TABLE_USER, //Table to query
                 columns,    //columns to return
-                null,        //columns for the WHERE clause
-                null,        //The values for the WHERE clause
-                null,       //group the rows
-                null,       //filter by row groups
+                null,         //columns for the WHERE clause
+                null,     //The values for the WHERE clause
+                null,        //group the rows
+                null,         //filter by row groups
                 sortOrder); //The sort order
         // Traversing through all rows and adding to list
         if (cursor.moveToFirst()) {
@@ -102,17 +123,25 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 user.setName(cursor.getString(cursor.getColumnIndex(COLUMN_USER_NAME)));
                 user.setEmail(cursor.getString(cursor.getColumnIndex(COLUMN_USER_EMAIL)));
                 user.setPassword(cursor.getString(cursor.getColumnIndex(COLUMN_USER_PASSWORD)));
+                user.setAddress(cursor.getString(cursor.getColumnIndex(COLUMN_USER_ADDRESS)));
+                user.setCity(cursor.getString(cursor.getColumnIndex(COLUMN_USER_CITY)));
+                user.setState(cursor.getString(cursor.getColumnIndex(COLUMN_USER_STATE)));
+                user.setZipcode(Integer.parseInt(cursor.getString(cursor.getColumnIndex(COLUMN_USER_ZIPCODE))));
+
                 // Adding user record to list
                 userList.add(user);
+
             } while (cursor.moveToNext());
         }
+
         cursor.close();
         db.close();
+
         // return user list
         return userList;
     }
     /**
-     * This method to update user record
+     * This method updates a user record
      *
      * @param user
      */
@@ -122,13 +151,18 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(COLUMN_USER_NAME, user.getName());
         values.put(COLUMN_USER_EMAIL, user.getEmail());
         values.put(COLUMN_USER_PASSWORD, user.getPassword());
+        values.put(COLUMN_USER_ADDRESS, user.getAddress());
+        values.put(COLUMN_USER_CITY, user.getCity());
+        values.put(COLUMN_USER_STATE, user.getState());
+        values.put(COLUMN_USER_ZIPCODE, user.getZipcode());
         // updating row
         db.update(TABLE_USER, values, COLUMN_USER_ID + " = ?",
                 new String[]{String.valueOf(user.getId())});
         db.close();
     }
+
     /**
-     * This method is to delete user record
+     * This method deletes a user record
      *
      * @param user
      */
@@ -139,8 +173,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 new String[]{String.valueOf(user.getId())});
         db.close();
     }
+
     /**
-     * This method to check user exist or not
+     * This method checks whether a user exists or not using email
      *
      * @param email
      * @return true/false
@@ -176,8 +211,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         }
         return false;
     }
+
     /**
-     * This method to check user exist or not
+     * This method checks whether a user exists or not using email/password
      *
      * @param email
      * @param password
