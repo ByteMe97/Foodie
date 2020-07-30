@@ -51,6 +51,11 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
     private DatabaseHelper databaseHelper;
     private User user;
 
+    /**
+     * Called to have the fragment instantiate its user interface view.
+     * @param savedInstanceState    if non-null, this fragment is being reconstructed from a
+     *                              previous saved state
+     */
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

@@ -18,10 +18,10 @@ import java.util.List;
  */
 public class PlansPage extends Fragment {
 
-    List<String> meals = new ArrayList<String>();
-    double cost;
-    int listSize;
-    TextView finalCost;
+    private List<String> meals = new ArrayList<String>();
+    private double cost;
+    private int listSize;
+    private TextView finalCost;
 
 
     /**
@@ -62,17 +62,17 @@ public class PlansPage extends Fragment {
         meals = PrefConfig.readListFromPref(getContext());
         listSize = PrefConfig.determineSizeOfList(getContext());
         finalCost = (TextView) view.findViewById(R.id.costs);
-      // b2 = (Button) view.findViewById(R.id.button2);
+
         view.findViewById(R.id.button2).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                updateDisplay(2, view);
+                updateDisplay(2);
             }
         });
         view.findViewById(R.id.button4).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                updateDisplay(4, view);
+                updateDisplay(4);
             }
         });
 
@@ -82,8 +82,11 @@ public class PlansPage extends Fragment {
         listView.setAdapter(adapter);
     }
 
-
-    public void updateDisplay(int servingSize, View view){
+    /**
+     * Method used to update the total cost of the meals shown to the user
+     * @param servingSize  How many serving of each meal the user requested
+     */
+    public void updateDisplay(int servingSize){
         cost = listSize * 7.99 * servingSize;
         finalCost.setText("$" + cost);
     }

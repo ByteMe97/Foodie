@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.Switch;
 
@@ -19,13 +18,6 @@ public class MealOptionEight extends Fragment {
 
     private MealOption8Listener listener;
     private Switch sw8;
-
-    /**
-     * Interface used to instantiate a listener
-     */
-    public interface MealOption8Listener {
-        void onMeal8Chosen(String input);
-    }
 
     /**
      * Called to have the fragment instantiate its user interface view.
@@ -79,6 +71,10 @@ public class MealOptionEight extends Fragment {
         });
     }
 
+    /**
+     * Method used to attach the listener to meal option 8
+     * @param context is called when switch is turned on
+     */
     @Override
     public void onAttach(@NonNull Context context) {
         super.onAttach(context);
@@ -91,9 +87,19 @@ public class MealOptionEight extends Fragment {
         }
     }
 
+    /**
+     * Method that detaches the listener when user exits the page
+     */
     @Override
     public void onDetach() {
         super.onDetach();
         listener = null;
+    }
+
+    /**
+     * Interface used to instantiate a listener
+     */
+    public interface MealOption8Listener {
+        void onMeal8Chosen(String input);
     }
 }

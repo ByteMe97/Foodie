@@ -20,14 +20,6 @@ public class MealOptionFour extends Fragment {
     private Switch sw4;
 
     /**
-     * Interface used to instantiate a listener
-     */
-    public interface MealOption4Listener {
-        void onMeal4Chosen(String input);
-    }
-
-
-    /**
      * Called to have the fragment instantiate its user interface view.
      * @param inflater              The LayoutInflater object that can be used to inflate any views
      *                              in the fragment,
@@ -80,7 +72,10 @@ public class MealOptionFour extends Fragment {
         });
     }
 
-
+    /**
+     * Method used to attach the listener to meal option 8
+     * @param context is called when switch is turned on
+     */
     @Override
     public void onAttach(@NonNull Context context) {
         super.onAttach(context);
@@ -93,9 +88,19 @@ public class MealOptionFour extends Fragment {
         }
     }
 
+    /**
+     * Method that detaches the listener when user exits the page
+     */
     @Override
     public void onDetach() {
         super.onDetach();
         listener = null;
+    }
+
+    /**
+     * Interface used to instantiate a listener
+     */
+    public interface MealOption4Listener {
+        void onMeal4Chosen(String input);
     }
 }

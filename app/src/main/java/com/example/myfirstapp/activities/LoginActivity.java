@@ -10,11 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
 import androidx.appcompat.widget.AppCompatTextView;
 import androidx.core.widget.NestedScrollView;
-import androidx.navigation.Navigation;
-import androidx.navigation.fragment.NavHostFragment;
-
 import com.example.myfirstapp.R;
-import com.example.myfirstapp.WelcomePage;
 import com.example.myfirstapp.helpers.InputValidation;
 import com.example.myfirstapp.sql.DatabaseHelper;
 import com.google.android.material.snackbar.Snackbar;
@@ -33,6 +29,12 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     private AppCompatTextView textViewLinkRegister;
     private InputValidation inputValidation;
     private DatabaseHelper databaseHelper;
+
+    /**
+     * Called to have the fragment instantiate its user interface view.
+     * @param savedInstanceState    if non-null, this fragment is being reconstructed from a
+     *                              previous saved state
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

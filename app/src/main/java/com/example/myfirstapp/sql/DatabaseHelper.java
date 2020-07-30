@@ -5,7 +5,6 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-
 import com.example.myfirstapp.model.User;
 
 import java.util.ArrayList;
@@ -50,10 +49,22 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public DatabaseHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
+
+    /**
+     * Method to create database
+     * @param db
+     */
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(CREATE_USER_TABLE);
     }
+
+    /**
+     * Method used to upgrade database
+     * @param db
+     * @param oldVersion
+     * @param newVersion
+     */
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         //Drop User Table if exist
@@ -61,6 +72,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         // Create tables again
         onCreate(db);
     }
+
     /**
      * This method is to create user record
      *
@@ -80,6 +92,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.insert(TABLE_USER, null, values);
         db.close();
     }
+
     /**
      * This method is to fetch all user and return the list of user records
      *
@@ -140,6 +153,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         // return user list
         return userList;
     }
+
     /**
      * This method updates a user record
      *

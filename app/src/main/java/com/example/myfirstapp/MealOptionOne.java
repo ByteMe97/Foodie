@@ -7,10 +7,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CompoundButton;
 import android.widget.Switch;
-
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.preference.PreferenceFragmentCompat;
 
 /**
  * Class used to show first meal option
@@ -19,13 +17,6 @@ public class MealOptionOne extends Fragment {
 
     private MealOptionOne.MealOption1Listener listener;
     private Switch sw1;
-
-    /**
-     * Interface used to instantiate a listener
-     */
-    public interface MealOption1Listener {
-        void onMeal1Chosen(String input);
-    }
 
     /**
      * Called to have the fragment instantiate its user interface view.
@@ -80,7 +71,10 @@ public class MealOptionOne extends Fragment {
         });
     }
 
-
+    /**
+     * Method used to attach the listener to meal option 8
+     * @param context is called when switch is turned on
+     */
     @Override
     public void onAttach(@NonNull Context context) {
         super.onAttach(context);
@@ -93,9 +87,19 @@ public class MealOptionOne extends Fragment {
         }
     }
 
+    /**
+     * Method that detaches the listener when user exits the page
+     */
     @Override
     public void onDetach() {
         super.onDetach();
         listener = null;
+    }
+
+    /**
+     * Interface used to instantiate a listener
+     */
+    public interface MealOption1Listener {
+        void onMeal1Chosen(String input);
     }
 }

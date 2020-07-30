@@ -1,23 +1,18 @@
 package com.example.myfirstapp;
 
-import android.content.Context;
-import android.content.SharedPreferences;
 import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ImageView;
-
-import com.example.myfirstapp.R;
-
 import java.util.ArrayList;
 import java.util.List;
 
 /**
  * The Main Activity for the Application
  * @author Katie LaBell and Kendra Haan
- * @version 1.0
+ * @version 2.0
  * This is the first screen to the user
  */
 public class MainActivity extends AppCompatActivity implements MealOptionOne.MealOption1Listener,
@@ -25,17 +20,8 @@ public class MainActivity extends AppCompatActivity implements MealOptionOne.Mea
         MealOptionFour.MealOption4Listener, MealOptionFive.MealOption5Listener,
         MealOptionSix.MealOption6Listener, MealOptionSeven.MealOption7Listener,
         MealOptionEight.MealOption8Listener {
-    private MealOptionEight meal1;
-    private MealOptionEight meal2;
-    private MealOptionEight meal3;
-    private MealOptionEight meal4;
-    private MealOptionFive meal5;
-    private MealOptionEight meal6;
-    private MealOptionEight meal7;
-    private MealOptionEight meal8;
-    private PlansPage plansPage;
-    SharedPreferences sp;
-    List<String> meals = new ArrayList<String>();
+
+    private List<String> meals = new ArrayList<String>();
 
     /**
      * Constructor used to do initial creation of a fragment
@@ -47,17 +33,10 @@ public class MainActivity extends AppCompatActivity implements MealOptionOne.Mea
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        plansPage = new PlansPage();
-
-        sp = getSharedPreferences("meals", Context.MODE_PRIVATE);
-
         ImageView iv_background = findViewById(R.id.iv_background);
         AnimationDrawable animationDrawable = (AnimationDrawable)  iv_background.getDrawable();
         animationDrawable.start();
-
-
     }
-
 
     /**
      * This method is used to add items to the action bar if it is present
@@ -71,7 +50,6 @@ public class MainActivity extends AppCompatActivity implements MealOptionOne.Mea
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
-
 
     /**
      * Method that implements handle action bar item clicks
@@ -94,47 +72,88 @@ public class MainActivity extends AppCompatActivity implements MealOptionOne.Mea
         return super.onOptionsItemSelected(item);
     }
 
+    /**
+     * Method that is invoked when meal is chosen for the week. Calls on external function to add
+     * the selected meal to the current meal listing
+     * @param input name of meal to be added
+     */
     @Override
     public void onMeal1Chosen(String input) {
         meals.add(input);
         PrefConfig.writeListInPref(getApplicationContext(), meals);
     }
 
+    /**
+     * Method that is invoked when meal is chosen for the week. Calls on external function to add
+     * the selected meal to the current meal listing
+     * @param input name of meal to be added
+     */
     @Override
     public void onMeal2Chosen(String input) {
         meals.add(input);
         PrefConfig.writeListInPref(getApplicationContext(), meals);
     }
 
+    /**
+     * Method that is invoked when meal is chosen for the week. Calls on external function to add
+     * the selected meal to the current meal listing
+     * @param input name of meal to be added
+     */
     @Override
     public void onMeal3Chosen(String input) {
         meals.add(input);
         PrefConfig.writeListInPref(getApplicationContext(), meals);
     }
 
+    /**
+     * Method that is invoked when meal is chosen for the week. Calls on external function to add
+     * the selected meal to the current meal listing
+     * @param input name of meal to be added
+     */
     @Override
     public void onMeal4Chosen(String input) {
         meals.add(input);
         PrefConfig.writeListInPref(getApplicationContext(), meals);
     }
 
+    /**
+     * Method that is invoked when meal is chosen for the week. Calls on external function to add
+     * the selected meal to the current meal listing
+     * @param input name of meal to be added
+     */
     @Override
     public void onMeal5Chosen(String input) {
         meals.add(input);
         PrefConfig.writeListInPref(getApplicationContext(), meals);
     }
 
+    /**
+     * Method that is invoked when meal is chosen for the week. Calls on external function to add
+     * the selected meal to the current meal listing
+     * @param input name of meal to be added
+     */
     @Override
     public void onMeal6Chosen(String input) {
         meals.add(input);
         PrefConfig.writeListInPref(getApplicationContext(), meals);
     }
+
+    /**
+     * Method that is invoked when meal is chosen for the week. Calls on external function to add
+     * the selected meal to the current meal listing
+     * @param input name of meal to be added
+     */
     @Override
     public void onMeal7Chosen(String input) {
         meals.add(input);
         PrefConfig.writeListInPref(getApplicationContext(), meals);
     }
 
+    /**
+     * Method that is invoked when meal is chosen for the week. Calls on external function to add
+     * the selected meal to the current meal listing
+     * @param input name of meal to be added
+     */
     @Override
     public void onMeal8Chosen(String input) {
         meals.add(input);

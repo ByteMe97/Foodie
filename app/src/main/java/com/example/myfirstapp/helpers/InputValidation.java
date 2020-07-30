@@ -5,12 +5,12 @@ import android.content.Context;
 import android.view.View;
 import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
-
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 
 public class InputValidation {
     private Context context;
+
     /**
      * constructor
      *
@@ -19,6 +19,7 @@ public class InputValidation {
     public InputValidation(Context context) {
         this.context = context;
     }
+
     /**
      * method to check InputEditText filled .
      *
@@ -38,6 +39,7 @@ public class InputValidation {
         }
         return true;
     }
+
     /**
      * method to check InputEditText has valid email .
      *
@@ -57,6 +59,15 @@ public class InputValidation {
         }
         return true;
     }
+
+    /**
+     * Method used to check inputted data from user
+     * @param textInputEditText1
+     * @param textInputEditText2
+     * @param textInputLayout
+     * @param message
+     * @return
+     */
     public boolean isInputEditTextMatches(TextInputEditText textInputEditText1, TextInputEditText textInputEditText2, TextInputLayout textInputLayout, String message) {
         String value1 = textInputEditText1.getText().toString().trim();
         String value2 = textInputEditText2.getText().toString().trim();
@@ -69,6 +80,7 @@ public class InputValidation {
         }
         return true;
     }
+
     /**
      * method to Hide keyboard
      *
