@@ -12,15 +12,23 @@
     <string name="email_settings_page_label">Email Settings Page</string>
     <string name="feedback_settings_page_label">Feedback Settings Page</string>
     <string name="terms_and_conditions_settings_page_label">Terms and Conditions Settings Page</string>
+    <string name="meal_option_one_page_label">Meal Option 1</string>
+    <string name="meal_option_two_page_label">Meal Option 2</string>
+    <string name="meal_option_three_page_label">Meal Option 3</string>
+    <string name="meal_option_four_page_label">Meal Option 4</string>
+    <string name="meal_option_five_page_label">Meal Option 5</string>
+    <string name="meal_option_six_page_label">Meal Option 6</string>
+    <string name="meal_option_seven_page_label">Meal Option 7</string>
+    <string name="meal_option_eight_page_label">Meal Option 8</string>
 
 
-    <!--    <string name="next">Next</string>-->
+    <!--    Fragments-->
     <string name="settings">Settings</string>
     <string name="plans">Plans</string>
     <string name="meals">Meals</string>
     <string name="previous">Previous</string>
-
     <string name="welcome">Welcome to Foodie!</string>
+    <string name="login">Login/Register</string>
 
     <!-- Preference Titles -->
     <string name="messages_header">Messages</string>
@@ -29,7 +37,7 @@
     <!-- Personal Preferences -->
     <string name="first_name">First Name</string>
     <string name="last_name">Last Name</string>
-    <string name="email_address">Email</string>
+    <string name="current_address">Address</string>
 
     <!-- Change Password-->
     <string name="current_password">Current Password</string>
@@ -55,13 +63,134 @@
         aware then we cannot be help responsible for any harm that may come to you or your family.
         Be warned!</string>
 
+    <!-- Meal Options General-->
+    <string name="nutritional_info">Nutritional Information:</string>
+    <string name="servings">Servings</string>
+    <string name="calories">Calories:</string>
+    <string name="fat">Fat:</string>
+    <string name="saturated_fat">Saturated Fat:</string>
+    <string name="carbohydrates">Carbohydrates:</string>
+    <string name="fiber">Fiber:</string>
+    <string name="sugar">Sugar:</string>
+    <string name="protein">Protein:</string>
+    <string name="allergies">Allergy Information:</string>
 
-    <!-- Sync Preferences -->
-    <string name="sync_title">Sync email periodically</string>
-    <string name="attachment_title">Download incoming attachments</string>
-    <string name="attachment_summary_on">Automatically download attachments for incoming emails
-    </string>
-    <string name="attachment_summary_off">Only download attachments when manually requested</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!-- Meal Option One-->
+    <string name="meal_option_one_name">Chicken Parmesan</string>
+    <string name="servings1">2</string>
+    <string name="calories1">459kcal</string>
+    <string name="fat1">25g</string>
+    <string name="saturated_fat1">10g</string>
+    <string name="carbohydrates1">16g</string>
+    <string name="fiber1">2g</string>
+    <string name="sugar1">4g</string>
+    <string name="protein1">42g</string>
+    <string name="allergies1">Gluten, Dairy</string>
+
+    <!-- Meal Option Two-->
+    <string name="meal_option_two_name">Sweet Potato Tacos</string>
+    <string name="servings2">1</string>
+    <string name="calories2">391kcal</string>
+    <string name="fat2">8g</string>
+    <string name="saturated_fat2">1g</string>
+    <string name="carbohydrates2">69g</string>
+    <string name="fiber2">16g</string>
+    <string name="sugar2">10g</string>
+    <string name="protein2">13g</string>
+    <string name="allergies2">Dairy</string>
+
+    <!-- Meal Option Three-->
+    <string name="meal_option_three_name">White Chicken Chili</string>
+    <string name="servings3">4</string>
+    <string name="calories3">495kcal</string>
+    <string name="fat3">17.8g</string>
+    <string name="saturated_fat3">3.3g</string>
+    <string name="carbohydrates3">42g</string>
+    <string name="fiber3">8.4g</string>
+    <string name="sugar3">8.8g</string>
+    <string name="protein3">45.7g</string>
+    <string name="allergies3">None</string>
+
+    <!-- Meal Option Four-->
+    <string name="meal_option_four_name">Shrimp Stir Fry</string>
+    <string name="servings4">5</string>
+    <string name="calories4">200kcal</string>
+    <string name="fat4">4.2g</string>
+    <string name="saturated_fat4">1.5g</string>
+    <string name="carbohydrates4">19.8g</string>
+    <string name="fiber4">2.3g</string>
+    <string name="sugar4">9.4g</string>
+    <string name="protein4">22.4g</string>
+    <string name="allergies4">Sea Food</string>
+
+    <!-- Meal Option Five-->
+    <string name="meal_option_five_name">Southwestern Quinoa Salad</string>
+    <string name="servings5">2</string>
+    <string name="calories5">456kcal</string>
+    <string name="fat5">23g</string>
+    <string name="saturated_fat5">10g</string>
+    <string name="carbohydrates5">53g</string>
+    <string name="fiber5">11g</string>
+    <string name="sugar5">5g</string>
+    <string name="protein5">11g</string>
+    <string name="allergies5">None</string>
+
+    <!-- Meal Option Six-->
+    <string name="meal_option_six_name">Pineapple Salmon</string>
+    <string name="servings6">1</string>
+    <string name="calories6">440kcal</string>
+    <string name="fat6">24g</string>
+    <string name="saturated_fat6">3g</string>
+    <string name="carbohydrates6">18g</string>
+    <string name="fiber6">2g</string>
+    <string name="sugar6">11g</string>
+    <string name="protein6">35g</string>
+    <string name="allergies6">Sea Food</string>
+
+    <!-- Meal Option Seven-->
+    <string name="meal_option_seven_name">Sweet and Sour Cauliflower</string>
+    <string name="servings7">2</string>
+    <string name="calories7">566kcal</string>
+    <string name="fat7">21g</string>
+    <string name="saturated_fat7">10g</string>
+    <string name="carbohydrates7">55.5g</string>
+    <string name="fiber7">18g</string>
+    <string name="sugar7">36g</string>
+    <string name="protein7">10g</string>
+    <string name="allergies7">None</string>
+
+    <!-- Meal Option Eight-->
+    <string name="meal_option_eight_name">Taco Stuffed Sweet Potato</string>
+    <string name="servings8">4</string>
+    <string name="calories8">493kcal</string>
+    <string name="fat8">6g</string>
+    <string name="saturated_fat8">3g</string>
+    <string name="carbohydrates8">80g</string>
+    <string name="fiber8">13g</string>
+    <string name="sugar8">19g</string>
+    <string name="protein8">31g</string>
+    <string name="allergies8">Dairy</string>
+
+    <string name="hint_name">Name</string>
+    <string name="hint_email">Email</string>
+    <string name="hint_password">Password</string>
+    <string name="hint_confirm_password">Confirm Password</string>
+    <string name="hint_address">Address</string>
+    <string name="hint_city">City</string>
+    <string name="hint_state">State</string>
+    <string name="hint_zipcode">Zipcode</string>
+    <string name="text_login">Login</string>
+    <string name="text_register">Register</string>
+    <string name="error_message_name">Enter Full Name</string>
+    <string name="error_message_email">Enter Valid Email</string>
+    <string name="error_message_age">Enter Age</string>
+    <string name="error_message_password">Enter Password</string>
+    <string name="success_message">Registration Successful</string>
+    <string name="text_not_member">No account yet? Create one</string>
+    <string name="text_already_member">Already a member? Login</string>
+    <string name="error_email_exists">Email Already Exists</string>
+    <string name="error_password_match">Password Does Not Match!</string>
+    <string name="error_valid_email_password">Incorrect Email or Password</string>
+
 </resources>

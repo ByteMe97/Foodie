@@ -1,15 +1,23 @@
 package com.example.myfirstapp;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CompoundButton;
+import android.widget.Switch;
+
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.navigation.fragment.NavHostFragment;
 
-public class WelcomePage extends Fragment {
+/**
+ * Class used to show last meal option
+ */
+public class MealOptionEight extends Fragment {
 
+    private MealOption8Listener listener;
+    private Switch sw8;
 
     /**
      * Called to have the fragment instantiate its user interface view.
@@ -32,7 +40,9 @@ public class WelcomePage extends Fragment {
             Bundle savedInstanceState
     ) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.welcome_page, container, false);
+        View view = inflater.inflate(R.layout.meal_option_eight, container, false);
+        view.setBackgroundColor(getResources().getColor(R.color.white));
+        return view;
     }
 
 
@@ -49,30 +59,52 @@ public class WelcomePage extends Fragment {
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        view.findViewById(R.id.button_settings).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                NavHostFragment.findNavController(WelcomePage.this)
-                        .navigate(R.id.action_WelcomePage_to_SettingsPage);
-            }
-        });
-
-        view.findViewById(R.id.button_meals).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                NavHostFragment.findNavController(WelcomePage.this)
-                        .navigate(R.id.action_WelcomePage_to_MealsPage);
-            }
-        });
-
-        view.findViewById(R.id.button_plans).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                NavHostFragment.findNavController(WelcomePage.this)
-                        .navigate(R.id.action_WelcomePage_to_PlansPage);
+        sw8 = (Switch)view.findViewById(R.id.AddMealOptionEight);
+        sw8.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    String input = getString(R.string.meal_option_eight_name);
+                    listener.onMeal8Chosen(input);
+                }
+                if (!isChecked) {
+                    String meal = getString(R.string.meal_option_eight_name);
+                    listener.onMeal8Removed(meal);
+                }
             }
         });
     }
 
+    /**
+     * Method used to attach the listener to meal option 8
+     * @param context is called when switch is turned on
+     */
+    @Override
+    public void onAttach(@NonNull Context context) {
+        super.onAttach(context);
+        if(context instanceof MealOptionEight.MealOption8Listener){
+            listener = (MealOptionEight.MealOption8Listener) context;
+        }
+        else{
+            throw new RuntimeException(context.toString() +
+                    "must implement MealOption8Listener");
+        }
+    }
+
+    /**
+     * Method that detaches the listener when user exits the page
+     */
+    @Override
+    public void onDetach() {
+        super.onDetach();
+        listener = null;
+    }
+
+    /**
+     * Interface used to instantiate a listener
+     */
+    public interface MealOption8Listener {
+        void onMeal8Chosen(String input);
+        void onMeal8Removed(String input);
+    }
 
 }

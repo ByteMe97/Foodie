@@ -22,21 +22,13 @@
         <action
             android:id="@+id/action_WelcomePage_to_SettingsPage"
             app:destination="@+id/SettingsPage" />
-
     </fragment>
-
-
 
     <fragment
         android:id="@+id/PlansPage"
         android:name="com.example.myfirstapp.PlansPage"
         android:label="@string/plans_page_label"
         tools:layout="@layout/plans_page">
-
-        <action
-            android:id="@+id/action_SecondFragment_to_FirstFragment"
-            app:destination="@id/WelcomePage" />
-
     </fragment>
 
     <fragment
@@ -46,9 +38,36 @@
         tools:layout="@layout/meals_page">
 
         <action
-            android:id="@+id/action_SecondFragment_to_FirstFragment"
-            app:destination="@id/WelcomePage" />
+            android:id="@+id/action_MealsPage_to_MealOption1"
+            app:destination="@id/MealOption1" />
 
+        <action
+            android:id="@+id/action_MealsPage_to_MealOption2"
+            app:destination="@id/MealOption2" />
+
+        <action
+            android:id="@+id/action_MealsPage_to_MealOption3"
+            app:destination="@id/MealOption3" />
+
+        <action
+            android:id="@+id/action_MealsPage_to_MealOption4"
+            app:destination="@id/MealOption4" />
+
+        <action
+            android:id="@+id/action_MealsPage_to_MealOption5"
+            app:destination="@id/MealOption5" />
+
+        <action
+            android:id="@+id/action_MealsPage_to_MealOption6"
+            app:destination="@id/MealOption6" />
+
+        <action
+            android:id="@+id/action_MealsPage_to_MealOption7"
+            app:destination="@id/MealOption7" />
+
+        <action
+            android:id="@+id/action_MealsPage_to_MealOption8"
+            app:destination="@id/MealOption8" />
     </fragment>
 
     <fragment
@@ -58,56 +77,73 @@
         tools:layout="@layout/settings">
 
         <action
-            android:id="@+id/action_SettingsPage_to_PersonalSettingsPage"
-            app:destination="@id/PersonalSettingsPage" />
-        <action
-            android:id="@+id/action_SettingsPage_to_PasswordSettingsPage"
-            app:destination="@id/PasswordSettingsPage" />
-        <action
-            android:id="@+id/action_SettingsPage_to_EmailSettingsPage"
-            app:destination="@id/EmailSettingsPage" />
-        <action
             android:id="@+id/action_SettingsPage_to_FeedbackSettingsPage"
             app:destination="@id/FeedbackSettingsPage" />
         <action
             android:id="@+id/action_SettingsPage_to_termsAndConditions"
             app:destination="@id/termsAndConditions" />
-
     </fragment>
 
-    <fragment
-        android:id="@+id/PersonalSettingsPage"
-        android:name="com.example.myfirstapp.PersonalSettings"
-        android:label="@string/personal_settings_page_label">
-
-    </fragment>
-
-    <fragment
-        android:id="@+id/PasswordSettingsPage"
-        android:name="com.example.myfirstapp.PasswordSettings"
-        android:label="@string/password_settings_page_label">
-
-    </fragment>
-
-    <fragment
-        android:id="@+id/EmailSettingsPage"
-        android:name="com.example.myfirstapp.EmailSettings"
-        android:label="@string/email_settings_page_label">
-
-    </fragment>
 
     <fragment
         android:id="@+id/FeedbackSettingsPage"
         android:name="com.example.myfirstapp.Feedback"
         android:label="@string/feedback_settings_page_label">
-
     </fragment>
 
     <fragment
         android:id="@+id/termsAndConditions"
         android:name="com.example.myfirstapp.TermsAndConditions"
         android:label="@string/terms_and_conditions_settings_page_label">
-
     </fragment>
+
+    <fragment
+        android:id="@+id/MealOption1"
+        android:name="com.example.myfirstapp.MealOptionOne"
+        android:label="@string/meal_option_one_page_label">
+    </fragment>
+
+    <fragment
+        android:id="@+id/MealOption2"
+        android:name="com.example.myfirstapp.MealOptionTwo"
+        android:label="@string/meal_option_two_page_label">
+    </fragment>
+
+    <fragment
+        android:id="@+id/MealOption3"
+        android:name="com.example.myfirstapp.MealOptionThree"
+        android:label="@string/meal_option_three_page_label">
+    </fragment>
+
+    <fragment
+        android:id="@+id/MealOption4"
+        android:name="com.example.myfirstapp.MealOptionFour"
+        android:label="@string/meal_option_four_page_label">
+    </fragment>
+
+    <fragment
+        android:id="@+id/MealOption5"
+        android:name="com.example.myfirstapp.MealOptionFive"
+        android:label="@string/meal_option_five_page_label">
+    </fragment>
+
+    <fragment
+        android:id="@+id/MealOption6"
+        android:name="com.example.myfirstapp.MealOptionSix"
+        android:label="@string/meal_option_six_page_label">
+    </fragment>
+
+    <fragment
+        android:id="@+id/MealOption7"
+        android:name="com.example.myfirstapp.MealOptionSeven"
+        android:label="@string/meal_option_seven_page_label">
+    </fragment>
+
+    <fragment
+        android:id="@+id/MealOption8"
+        android:name="com.example.myfirstapp.MealOptionEight"
+        android:label="@string/meal_option_eight_page_label">
+    </fragment>
+
 
 </navigation>
