@@ -1,7 +1,6 @@
 package com.example.myfirstapp.model;
 
 public class User {
-    private int id;
     private String name;
     private String email;
     private String password;
@@ -10,21 +9,6 @@ public class User {
     private String state;
     private int zipcode;
 
-    /**
-     * Method used to read users set id
-     * @return saved id
-     */
-    public int getId() {
-        return id;
-    }
-
-    /**
-     * Method used to set the users id
-     * @param id obtained from user
-     */
-    public void setId(int id) {
-        this.id = id;
-    }
 
     /**
      * Method used to read users set name

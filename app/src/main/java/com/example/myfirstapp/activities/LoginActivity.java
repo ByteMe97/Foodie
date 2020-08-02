@@ -121,11 +121,4 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             failureSnack.show();
         }
     }
-    /**
-     * This method is to empty all input edit text
-     */
-    private void emptyInputEditText() {
-        textInputEditTextEmail.setText(null);
-        textInputEditTextPassword.setText(null);
-    }
 }

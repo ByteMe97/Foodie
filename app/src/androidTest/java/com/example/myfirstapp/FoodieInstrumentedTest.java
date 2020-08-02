@@ -15,6 +15,8 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import androidx.test.rule.ActivityTestRule;
 
+import java.util.Random;
+
 import static androidx.test.espresso.Espresso.onData;
 import static androidx.test.espresso.Espresso.onView;
 import static androidx.test.espresso.action.ViewActions.click;
@@ -460,6 +462,11 @@ public class FoodieInstrumentedTest {
     @Test
     public void registerLoginTest() {
 
+        Random rand = new Random();
+        int num = rand.nextInt(1000);
+        String username = "TestUser" + num;
+        String email = "TestUser" + num + "@test.com";
+
         // Press button to navigate to Settings page
         onView(withId(R.id.button_settings)).perform(click());
 
@@ -470,9 +477,9 @@ public class FoodieInstrumentedTest {
         onView(withId(R.id.textViewLinkRegister)).perform(click());
 
         // Fill in registration form
-        onView(withId(R.id.textInputEditTextName)).perform(typeText("TestUser"));
+        onView(withId(R.id.textInputEditTextName)).perform(typeText(username));
         Espresso.closeSoftKeyboard();
-        onView(withId(R.id.textInputEditTextEmail)).perform(typeText("TestUser@test.com"));
+        onView(withId(R.id.textInputEditTextEmail)).perform(typeText(email));
         Espresso.closeSoftKeyboard();
         onView(withId(R.id.textInputEditTextAddress)).perform(typeText("123 Pleasant St."));
         Espresso.closeSoftKeyboard();
@@ -498,7 +505,7 @@ public class FoodieInstrumentedTest {
         Espresso.onView(withId(R.id.textInputEditTextConfirmPassword)).perform(ViewActions.swipeUp());
         Espresso.onView(withId(R.id.textInputEditTextConfirmPassword)).perform(ViewActions.swipeUp());
         onView(withId(R.id.appCompatTextViewLoginLink)).perform(click());
-        onView(withId(R.id.textInputEditTextEmail)).perform(typeText("TestUser@test.com"));
+        onView(withId(R.id.textInputEditTextEmail)).perform(typeText(email));
         onView(withId(R.id.textInputEditTextPassword)).perform(typeText("testPassword"));
         onView(withId(R.id.appCompatButtonLogin)).perform(click());
 
@@ -507,6 +514,149 @@ public class FoodieInstrumentedTest {
         onView(withId(R.id.button_login)).check(matches(withText("Login/Register                                            >")));
         onView(withId(R.id.termsAndConditions)).check(matches(withText("Terms and Conditions                               >")));
         onView(withId(R.id.giveFeedback)).check(matches(withText("Feedback                                                      >")));
+
+        // Press button to navigate to Login page
+        onView(withId(R.id.button_login)).perform(click());
+
+        // Click link to Register page
+        onView(withId(R.id.textViewLinkRegister)).perform(click());
+
+        // Fill in registration form
+        onView(withId(R.id.textInputEditTextName)).perform(typeText(username));
+        Espresso.closeSoftKeyboard();
+        onView(withId(R.id.textInputEditTextEmail)).perform(typeText(email));
+        Espresso.closeSoftKeyboard();
+        onView(withId(R.id.textInputEditTextAddress)).perform(typeText("123 Pleasant St."));
+        Espresso.closeSoftKeyboard();
+        onView(withId(R.id.textInputEditTextCity)).perform(typeText("Grand Rapids"));
+        Espresso.closeSoftKeyboard();
+        onView(withId(R.id.textInputEditTextState)).perform(typeText("MI"));
+        Espresso.closeSoftKeyboard();
+        onView(withId(R.id.textInputEditTextZipcode)).perform(typeText("49504"));
+        Espresso.closeSoftKeyboard();
+        onView(withId(R.id.textInputEditTextPassword)).perform(typeText("testPassword2"));
+        Espresso.closeSoftKeyboard();
+        onView(withId(R.id.textInputEditTextConfirmPassword)).perform(typeText("testPassword2"));
+        Espresso.closeSoftKeyboard();
+        Espresso.onView(withId(R.id.textInputEditTextConfirmPassword)).perform(ViewActions.swipeUp());
+        Espresso.onView(withId(R.id.textInputEditTextConfirmPassword)).perform(ViewActions.swipeUp());
+        Espresso.onView(withId(R.id.textInputEditTextConfirmPassword)).perform(ViewActions.swipeUp());
+
+        // Submit
+        onView(withId(R.id.appCompatButtonRegister)).perform(click());
+
+        // Navigate back to Login page and log in
+        Espresso.onView(withId(R.id.textInputEditTextConfirmPassword)).perform(ViewActions.swipeUp());
+        Espresso.onView(withId(R.id.textInputEditTextConfirmPassword)).perform(ViewActions.swipeUp());
+        Espresso.onView(withId(R.id.textInputEditTextConfirmPassword)).perform(ViewActions.swipeUp());
+        onView(withId(R.id.appCompatTextViewLoginLink)).perform(click());
+        onView(withId(R.id.textInputEditTextEmail)).perform(typeText(email));
+        onView(withId(R.id.textInputEditTextPassword)).perform(typeText("testPassword2"));
+        onView(withId(R.id.appCompatButtonLogin)).perform(click());
+
+        // Ensure that Login page is still displayed
+        onView(withId(R.id.appCompatButtonLogin)).check(matches(withText("Login")));
+
+    }
+
+    @Test
+    public void registerLoginTestInputValidation() {
+
+        Random rand = new Random();
+        int num = rand.nextInt(1000);
+        String username = "TestUser" + num;
+        String email = "TestUser" + num;
+
+        // Press button to navigate to Settings page
+        onView(withId(R.id.button_settings)).perform(click());
+
+        // Press button to navigate to Login page
+        onView(withId(R.id.button_login)).perform(click());
+
+        // Click link to Register page
+        onView(withId(R.id.textViewLinkRegister)).perform(click());
+
+        // Fill in registration form
+        onView(withId(R.id.textInputEditTextName)).perform(typeText(username));
+        Espresso.closeSoftKeyboard();
+        onView(withId(R.id.textInputEditTextEmail)).perform(typeText(email));
+        Espresso.closeSoftKeyboard();
+        onView(withId(R.id.textInputEditTextAddress)).perform(typeText("123 Pleasant St."));
+        Espresso.closeSoftKeyboard();
+        onView(withId(R.id.textInputEditTextCity)).perform(typeText("Grand Rapids"));
+        Espresso.closeSoftKeyboard();
+        onView(withId(R.id.textInputEditTextState)).perform(typeText("MI"));
+        Espresso.closeSoftKeyboard();
+        onView(withId(R.id.textInputEditTextZipcode)).perform(typeText("49504"));
+        Espresso.closeSoftKeyboard();
+        onView(withId(R.id.textInputEditTextPassword)).perform(typeText("testPassword"));
+        Espresso.closeSoftKeyboard();
+        onView(withId(R.id.textInputEditTextConfirmPassword)).perform(typeText("testPassword"));
+        Espresso.closeSoftKeyboard();
+        Espresso.onView(withId(R.id.textInputEditTextConfirmPassword)).perform(ViewActions.swipeUp());
+        Espresso.onView(withId(R.id.textInputEditTextConfirmPassword)).perform(ViewActions.swipeUp());
+        Espresso.onView(withId(R.id.textInputEditTextConfirmPassword)).perform(ViewActions.swipeUp());
+
+        // Submit
+        onView(withId(R.id.appCompatButtonRegister)).perform(click());
+
+        // Navigate back to Login page and log in
+        Espresso.onView(withId(R.id.textInputEditTextConfirmPassword)).perform(ViewActions.swipeUp());
+        Espresso.onView(withId(R.id.textInputEditTextConfirmPassword)).perform(ViewActions.swipeUp());
+        Espresso.onView(withId(R.id.textInputEditTextConfirmPassword)).perform(ViewActions.swipeUp());
+        onView(withId(R.id.appCompatTextViewLoginLink)).perform(click());
+        onView(withId(R.id.textInputEditTextEmail)).perform(typeText(email));
+        onView(withId(R.id.textInputEditTextPassword)).perform(typeText("testPassword"));
+        onView(withId(R.id.appCompatButtonLogin)).perform(click());
+
+        // Ensure that Settings page option buttons are displayed
+        onView(withId(R.id.textView)).check(matches(withText("Settings")));
+        onView(withId(R.id.button_login)).check(matches(withText("Login/Register                                            >")));
+        onView(withId(R.id.termsAndConditions)).check(matches(withText("Terms and Conditions                               >")));
+        onView(withId(R.id.giveFeedback)).check(matches(withText("Feedback                                                      >")));
+
+        // Press button to navigate to Login page
+        onView(withId(R.id.button_login)).perform(click());
+
+        // Click link to Register page
+        onView(withId(R.id.textViewLinkRegister)).perform(click());
+
+        // Fill in registration form
+        onView(withId(R.id.textInputEditTextName)).perform(typeText(username));
+        Espresso.closeSoftKeyboard();
+        onView(withId(R.id.textInputEditTextEmail)).perform(typeText(email));
+        Espresso.closeSoftKeyboard();
+        onView(withId(R.id.textInputEditTextAddress)).perform(typeText("123 Pleasant St."));
+        Espresso.closeSoftKeyboard();
+        onView(withId(R.id.textInputEditTextCity)).perform(typeText("Grand Rapids"));
+        Espresso.closeSoftKeyboard();
+        onView(withId(R.id.textInputEditTextState)).perform(typeText("MI"));
+        Espresso.closeSoftKeyboard();
+        onView(withId(R.id.textInputEditTextZipcode)).perform(typeText("49504"));
+        Espresso.closeSoftKeyboard();
+        onView(withId(R.id.textInputEditTextPassword)).perform(typeText("testPassword2"));
+        Espresso.closeSoftKeyboard();
+        onView(withId(R.id.textInputEditTextConfirmPassword)).perform(typeText("testPassword2"));
+        Espresso.closeSoftKeyboard();
+        Espresso.onView(withId(R.id.textInputEditTextConfirmPassword)).perform(ViewActions.swipeUp());
+        Espresso.onView(withId(R.id.textInputEditTextConfirmPassword)).perform(ViewActions.swipeUp());
+        Espresso.onView(withId(R.id.textInputEditTextConfirmPassword)).perform(ViewActions.swipeUp());
+
+        // Submit
+        onView(withId(R.id.appCompatButtonRegister)).perform(click());
+
+        // Navigate back to Login page and log in
+        Espresso.onView(withId(R.id.textInputEditTextConfirmPassword)).perform(ViewActions.swipeUp());
+        Espresso.onView(withId(R.id.textInputEditTextConfirmPassword)).perform(ViewActions.swipeUp());
+        Espresso.onView(withId(R.id.textInputEditTextConfirmPassword)).perform(ViewActions.swipeUp());
+        onView(withId(R.id.appCompatTextViewLoginLink)).perform(click());
+        onView(withId(R.id.textInputEditTextEmail)).perform(typeText(email));
+        onView(withId(R.id.textInputEditTextPassword)).perform(typeText("testPassword2"));
+        onView(withId(R.id.appCompatButtonLogin)).perform(click());
+
+        // Ensure that Login page is still displayed
+        onView(withId(R.id.appCompatButtonLogin)).check(matches(withText("Login")));
+
     }
 
 }
