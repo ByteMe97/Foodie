@@ -170,7 +170,7 @@
         app:layout_constraintTop_toBottomOf="@+id/mealOption4" />
 
     <TextView
-        android:id="@+id/mea6Option1Text"
+        android:id="@+id/mealOption6Text"
         android:layout_width="138dp"
         android:layout_height="35dp"
         android:layout_marginBottom="1dp"
@@ -200,7 +200,7 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <TextView
-        android:id="@+id/mea7Option1Text"
+        android:id="@+id/mealOption7Text"
         android:layout_width="138dp"
         android:layout_height="35dp"
         android:layout_marginBottom="1dp"
@@ -229,7 +229,7 @@
         app:layout_constraintTop_toBottomOf="@+id/mealOption6" />
 
     <TextView
-        android:id="@+id/mea8Option1Text"
+        android:id="@+id/mealOption8Text"
         android:layout_width="138dp"
         android:layout_height="35dp"
         android:layout_marginBottom="1dp"

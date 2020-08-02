@@ -172,7 +172,6 @@
     <string name="protein8">31g</string>
     <string name="allergies8">Dairy</string>
 
-    <string name="text_accounts">All Accounts</string>
     <string name="hint_name">Name</string>
     <string name="hint_email">Email</string>
     <string name="hint_password">Password</string>
@@ -193,7 +192,5 @@
     <string name="error_email_exists">Email Already Exists</string>
     <string name="error_password_match">Password Does Not Match!</string>
     <string name="error_valid_email_password">Incorrect Email or Password</string>
-    <string name="text_hello">Hello,</string>
-    <string name="text_title">Foodie Registered Users</string>
 
 </resources>

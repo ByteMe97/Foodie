@@ -66,7 +66,10 @@ public class MealOptionSeven extends Fragment {
                 if (isChecked) {
                     String input = getString(R.string.meal_option_seven_name);
                     listener.onMeal7Chosen(input);
-
+                }
+                if (!isChecked) {
+                    String meal = getString(R.string.meal_option_seven_name);
+                    listener.onMeal7Removed(meal);
                 }
             }
         });
@@ -102,5 +105,6 @@ public class MealOptionSeven extends Fragment {
      */
     public interface MealOption7Listener {
         void onMeal7Chosen(String input);
+        void onMeal7Removed(String input);
     }
 }
